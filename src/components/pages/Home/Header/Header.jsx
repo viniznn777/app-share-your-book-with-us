@@ -7,8 +7,11 @@ const Header = () => {
   const { authenticated } = useContext(Context);
 
   return (
-    <div className="container">
-      <div className="p-5 rounded-lg m-3" style={{ background: "#E9ECEF" }}>
+    <div className="container" style={{ paddingTop: "78px" }}>
+      <div
+        className="p-5 rounded-lg m-3 mt-5"
+        style={{ background: "#E9ECEF" }}
+      >
         <h1 className="display-4">
           Explore o Universo das Recomendações de Livros!
         </h1>

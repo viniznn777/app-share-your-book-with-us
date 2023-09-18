@@ -4,7 +4,7 @@ import FormSignIn from "./FormSignIn/FormSignIn";
 
 const SignIn = () => {
   return (
-    <div className="container">
+    <div className="container" style={{ paddingTop: "90px" }}>
       <p className="fs-1 mt-5">Fazer login: </p>
       <hr />
       <FormSignIn />

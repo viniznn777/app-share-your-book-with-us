@@ -16,7 +16,7 @@ const SignUp = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container" style={{ paddingTop: "90px" }}>
       <p className="fs-1 mt-5">Crie sua conta hoje: </p>
       <hr />
       <div className="card mt-5">

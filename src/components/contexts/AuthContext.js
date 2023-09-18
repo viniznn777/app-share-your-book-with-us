@@ -10,8 +10,10 @@ const Context = createContext();
 function AuthProvider({ children }) {
   const [authenticated, setAuthenticated] = useState(false);
   const [loadingUser, setLoadingUser] = useState(true);
+  const [nameUser, setNameUser] = useState("");
   const navigate = useNavigate();
 
+  // effect para ver se há um token de autenticação no localStorage, caso não haja, o state de authenticated será passado como false para que o usuário não consiga acessar rotas privadas
   useEffect(() => {
     const token = localStorage.getItem("token");
 
@@ -22,6 +24,7 @@ function AuthProvider({ children }) {
     setLoadingUser(false);
   }, []);
 
+  // Função para realizar o cadastro de um usuário no app
   const handleSignUp = async (event, username, email, password) => {
     event.preventDefault();
     try {
@@ -44,6 +47,7 @@ function AuthProvider({ children }) {
     }
   };
 
+  // Funcão para realizar o login do usuário
   const handleLogin = async (event, email, password) => {
     event.preventDefault();
 
@@ -65,11 +69,12 @@ function AuthProvider({ children }) {
 
       if (response.ok) {
         const responseData = await response.json();
-        console.log("Login bem-sucedido:", responseData);
         // Armazene o token JWT no localStorage
         localStorage.setItem("token", JSON.stringify(responseData.token));
-        // Redirecione o usuário após o login
+        // Armazene o id de usuário em uma chave 'username' no localStorage
+        localStorage.setItem("username", responseData.user);
         setAuthenticated(true);
+        // Redirecione o usuário após o login
         navigate("/");
       } else if (response.status === 400) {
         errorMessage("Email ou Senha incorretos!");
@@ -79,15 +84,54 @@ function AuthProvider({ children }) {
     }
   };
 
+  // Função para realizar o logout do usuário
   const handleLogout = () => {
+    // setando o Autheticated como false para que o usuário não esteja mais autenticado
     setAuthenticated(false);
+    // removendo o token de autenticação e o id do usuário do localStorage
     localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    // redirecionando para a página de login
     navigate("/signin");
   };
+
+  // Effect para ser carregado toda vez em que o usuário está autenticado, para ser mostrado seu nome de usuário na barra de navegação do app
+  useEffect(() => {
+    // Verifica se o usuário está autenticado
+    if (authenticated) {
+      (async () => {
+        try {
+          // Buscando o valor da chave 'username' setada no localStorage
+          const localStorageUserId = localStorage.getItem("username");
+          if (localStorageUserId) {
+            // Caso exista uma chave e um valor, será passado como parâmetro na url da api para buscar o nome de usuário do usuário.
+            const response = await fetch(
+              `http://localhost:8081/return/user/${localStorageUserId}`
+            );
+            if (response.ok) {
+              // Esperando uma resposta em JSON e armazenando-a na variavel 'responseData'
+              const responseData = await response.json();
+              // passando o valor de 'responseData.username' para o state "setNameUser", no qual é o valor do nome de usuário do usuário
+              setNameUser(responseData.username);
+            }
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      })();
+    }
+  }, [authenticated]);
 
   if (loadingUser) {
     return (
       <p className="fs-1" style={{ textAlign: "center" }}>
+        loading...
+      </p>
+    );
+  }
+  if (!nameUser) {
+    return (
+      <p className="fs-5" style={{ color: "#fff" }}>
         loading...
       </p>
     );
@@ -100,6 +144,7 @@ function AuthProvider({ children }) {
         handleSignUp,
         handleLogin,
         handleLogout,
+        nameUser,
       }}
     >
       {children}

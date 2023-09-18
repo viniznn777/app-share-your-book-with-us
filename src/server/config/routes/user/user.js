@@ -13,7 +13,7 @@ router.get("/:id", async (req, res) => {
       return res.status(400).json({ message: "Not found user." });
     }
 
-    res.status(200).json(user.username);
+    res.status(200).json({ username: user.username });
   } catch (err) {
     console.log();
   }

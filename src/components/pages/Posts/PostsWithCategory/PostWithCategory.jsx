@@ -18,6 +18,7 @@ const PostWithCategory = () => {
         if (response.ok) {
           const dataResponse = await response.json();
           setData(dataResponse);
+          console.log(dataResponse[0].category.name);
         }
       } catch (err) {
         console.log(err);
@@ -29,7 +30,15 @@ const PostWithCategory = () => {
   }, [slug]);
 
   return (
-    <div className="container">
+    <div className="container" style={{ paddingTop: "90px" }}>
+      {data.length > 0 ? (
+        <div>
+          <p className="fs-1 mt-4 fw-bold" style={{ textAlign: "center" }}>
+            {data[0].category.name}
+          </p>
+          <hr />
+        </div>
+      ) : null}
       {isLoading ? (
         <p className="fs-2" style={{ color: "#ffffff", textAlign: "center" }}>
           Loading posts...

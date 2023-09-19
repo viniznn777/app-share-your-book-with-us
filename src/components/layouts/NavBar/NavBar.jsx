@@ -52,7 +52,7 @@ const NavBar = () => {
                   </button>
                 </li>
                 <div className="container-profile">
-                  <Link to="/my-profile" className="icon username">
+                  <Link to={"/my-profile"} className="icon username">
                     <p className="username">{nameUser}</p>
                     <p>
                       <CgProfile />

@@ -57,6 +57,7 @@ const Form = () => {
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
                 className="form-control"
+                placeholder="ex. viagem-ao-centro-da-terra"
               />
             </div>
 

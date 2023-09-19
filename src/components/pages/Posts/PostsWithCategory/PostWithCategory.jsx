@@ -18,7 +18,6 @@ const PostWithCategory = () => {
         if (response.ok) {
           const dataResponse = await response.json();
           setData(dataResponse);
-          console.log(dataResponse[0].category.name);
         }
       } catch (err) {
         console.log(err);

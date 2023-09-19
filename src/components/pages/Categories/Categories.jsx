@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Container from "./Styles";
+import { errorMessage } from "../../utilities/toastMessages/ToastMessages";
+import { ToastContainer } from "react-toastify";
 
 const Categories = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    document.title = "AppBooks | Categorias";
-  }, []);
 
   useEffect(() => {
     async function fetchData() {
@@ -21,16 +19,19 @@ const Categories = () => {
           setData(dataResponse);
         }
       } catch (err) {
+        errorMessage("Não foi possível carregar as categorias!");
         console.error(err);
       } finally {
         setLoading(false);
       }
     }
     fetchData();
+    document.title = "AppBooks | Categorias";
   }, []);
 
   return (
     <Container className="container">
+      <ToastContainer />
       <p className="fs-1 mt-4 fw-bold">Categorias: </p>
       <hr />
       {loading ? (

@@ -129,7 +129,7 @@ function AuthProvider({ children }) {
       </p>
     );
   }
-  if (!nameUser) {
+  if (authenticated && !nameUser) {
     return (
       <p className="fs-5" style={{ color: "#fff" }}>
         loading...

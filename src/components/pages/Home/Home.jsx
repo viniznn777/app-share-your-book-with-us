@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PostComponent from "../Posts/PostComponent";
 import Header from "./Header/Header";
+import { errorMessage } from "../../utilities/toastMessages/ToastMessages";
+import { ToastContainer } from "react-toastify";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -17,6 +19,7 @@ const Home = () => {
           setData(dataResponse);
         }
       } catch (err) {
+        errorMessage("Não foi possível carregar os posts!");
         console.log(err);
       } finally {
         setIsLoading(false);
@@ -28,6 +31,7 @@ const Home = () => {
 
   return (
     <div>
+      <ToastContainer />
       <Header />
       {isLoading ? (
         <p className="fs-2" style={{ textAlign: "center" }}>

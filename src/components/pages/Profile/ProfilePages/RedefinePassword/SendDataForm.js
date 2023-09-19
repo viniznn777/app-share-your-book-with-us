@@ -8,7 +8,10 @@ import {
 export default async function SendDataForm(
   oldPassword,
   newPassword,
-  newPassword2
+  newPassword2,
+  setOldPassword,
+  setNewPassword,
+  setNewPassword2
 ) {
   // validação de formulário
   if (!oldPassword || !newPassword || !newPassword2) {
@@ -29,6 +32,9 @@ export default async function SendDataForm(
     const response = await sendData(body);
 
     if (response.ok) {
+      setOldPassword("");
+      setNewPassword("");
+      setNewPassword2("");
       successMessage("Senha alterada com sucesso!");
     }
   } catch (err) {

@@ -62,7 +62,14 @@ const FormRedefinePassword = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    SendDataForm(oldPassword, newPassword, newPassword2);
+    SendDataForm(
+      oldPassword,
+      newPassword,
+      newPassword2,
+      setOldPassword,
+      setNewPassword,
+      setNewPassword2
+    );
   }
 };
 

@@ -35,6 +35,11 @@ const Post = new Schema({
     type: Date,
     default: Date.now(),
   },
+  idUser: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 });
 
 mongoose.model("posts", Post);

@@ -18,6 +18,7 @@ const PostWithCategory = () => {
         if (response.ok) {
           const dataResponse = await response.json();
           setData(dataResponse);
+          console.log(dataResponse);
         }
       } catch (err) {
         console.log(err);
@@ -55,6 +56,7 @@ const PostWithCategory = () => {
               slug={item.slug}
               category={item.category.name}
               date={item.date}
+              username={item.idUser.username}
             />
           </div>
         ))

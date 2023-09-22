@@ -67,6 +67,11 @@ router.get("/:slug", async (req, res) => {
         if (category) {
           Post.find({ category: category._id })
             .populate("category")
+            // Mostrar o nome de usuário do criador da publicação. Retornando na chave idUser
+            .populate({
+              path: "idUser",
+              select: "username",
+            })
             .lean()
             .then((posts) => {
               res.json(posts);

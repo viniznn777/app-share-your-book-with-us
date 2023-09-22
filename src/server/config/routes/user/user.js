@@ -12,7 +12,7 @@ router.get("/:id", async (req, res) => {
   try {
     const user = await User.findOne({ _id: id });
     if (!user) {
-      return res.status(400).json({ message: "Not found user." });
+      return res.status(400).json({ message: "User not found!" });
     }
 
     res.status(200).json({ username: user.username });
@@ -28,7 +28,7 @@ router.get("/:id/em", async (req, res) => {
   try {
     const user = await User.findOne({ _id: id });
     if (!user) {
-      return res.status(400).json({ message: "Not found user." });
+      return res.status(400).json({ message: "User not found!" });
     }
 
     res.status(200).json({ email: user.email });
@@ -41,7 +41,6 @@ router.get("/:id/em", async (req, res) => {
 router.post("/redefine-password", async (req, res) => {
   try {
     const { oldPassword, newPassword, id } = req.body;
-    console.log(oldPassword, newPassword, id);
     const user = await User.findOne({ _id: id });
 
     if (!user) {
@@ -63,7 +62,7 @@ router.post("/redefine-password", async (req, res) => {
       { password: hashedPassword },
       { new: true }
     );
-    res.status(200).json({ message: "Senha alterada com sucesso!" });
+    res.status(200).json({ message: "Password changed successfully!" });
   } catch (err) {
     console.log(err);
     res.status(500).json({ error: "Internal error" });
@@ -87,7 +86,7 @@ router.post("/redefine-email", async (req, res) => {
       { email: newEmail },
       { new: true }
     );
-    res.status(200).json({ message: "Email alterado com sucesso!" });
+    res.status(200).json({ message: "Email changed successfully!" });
   } catch (err) {
     console.log(err);
     res.status(500).json({ error: "Internal error" });

@@ -10,6 +10,7 @@ const PostComponent = ({
   category,
   slug,
   date,
+  username,
 }) => {
   return (
     <ContainerPost className="container">
@@ -17,7 +18,14 @@ const PostComponent = ({
         <div className="card-body">
           <p className="fs-1 fw-bold">{title}</p>
           <hr />
-          <p className="fs-5">{description}</p>
+          <div className="container-avatar">
+            <img
+              src={`https://api.dicebear.com/7.x/initials/svg?seed=${username}&size=45&radius=50`}
+              alt="avatar"
+            />
+            <p className="fs-6 fw-bold">{username ? `${username} - ` : null}</p>
+            <p className="fs-5">{description}</p>
+          </div>
           <div className="containerImg">
             <figure className="containerImg mt-4">
               <img src={img} alt="" className="img-fluid" draggable="false" />

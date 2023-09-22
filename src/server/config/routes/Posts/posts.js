@@ -9,6 +9,11 @@ router.get("/", async (req, res) => {
     const response = await Post.find()
       .lean()
       .populate("category")
+      // Mostrar o nome de usuário do criador da publicação. Retornando na chave idUser
+      .populate({
+        path: "idUser",
+        select: "username",
+      })
       .sort({ date: "desc" });
 
     if (response) {
@@ -21,7 +26,7 @@ router.get("/", async (req, res) => {
 
 router.post("/new", async (req, res) => {
   try {
-    const { title, description, img, synopsis, category, author, slug } =
+    const { title, description, img, synopsis, category, author, slug, id } =
       req.body;
     const newPost = {
       title,
@@ -31,6 +36,7 @@ router.post("/new", async (req, res) => {
       category,
       author,
       slug,
+      idUser: id, // Id recebido de um input hidden do front-end, sendo passado para a chave idUser que contém no model de Post
     };
     await new Post(newPost).save();
     res.status(200).redirect("http://localhost:3000/");

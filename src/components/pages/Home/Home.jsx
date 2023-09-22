@@ -45,6 +45,7 @@ const Home = () => {
             img={item.img}
             synopsis={item.synopsis}
             author={item.author}
+            username={item.idUser.username}
             slug={item.slug}
             category={item.category.name}
             date={item.date}

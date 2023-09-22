@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Input from "../../../../utilities/Input";
 
 const Form = () => {
+  const [idUser, setIdUser] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
@@ -26,6 +27,9 @@ const Form = () => {
       }
     }
 
+    const id = localStorage.getItem("username");
+    setIdUser(id);
+
     fetchData();
     document.title = "AppBooks | Recomendar";
   }, []);
@@ -34,6 +38,12 @@ const Form = () => {
       <div className="card-body">
         <form method="post" action="http://localhost:8081/posts/new" id="form">
           <div className="containerTitle mt-2">
+            <input
+              type="hidden"
+              name="id"
+              onChange={(e) => setIdUser(e.target.value)}
+              value={idUser}
+            />
             <Input
               type="text"
               label={true}

@@ -8,6 +8,12 @@ const ContainerPost = styled.div`
     justify-content: center;
     flex-direction: column;
   }
+  .container-avatar {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    word-wrap: break-word;
+  }
 `;
 
 export default ContainerPost;

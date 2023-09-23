@@ -9,7 +9,7 @@ const Profile = () => {
 
   useEffect(() => {
     document.title = "AppBooks | Meu Perfil";
-  });
+  }, []);
 
   return (
     <ContainerProfile className="container">
@@ -25,6 +25,9 @@ const Profile = () => {
         <p className="fs-3 fw-bold">{nameUser}</p>
       </div>
       <div className="container-fluid container-links">
+        <Link to="/my-recommendations">
+          <div className="alert alert-light">Minhas Recomendações</div>
+        </Link>
         <Link to="/redefine-password">
           <div className="alert alert-light">Redefinir Senha</div>
         </Link>

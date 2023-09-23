@@ -3,6 +3,7 @@ import PostComponent from "../Posts/PostComponent";
 import Header from "./Header/Header";
 import { errorMessage } from "../../utilities/toastMessages/ToastMessages";
 import { ToastContainer } from "react-toastify";
+import Loader from "../../utilities/Loader/Loader";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -34,9 +35,7 @@ const Home = () => {
       <ToastContainer />
       <Header />
       {isLoading ? (
-        <p className="fs-2" style={{ textAlign: "center" }}>
-          Loading posts...
-        </p>
+        <Loader />
       ) : data.length > 0 ? (
         data.map((item, index) => (
           <PostComponent

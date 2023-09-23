@@ -34,7 +34,7 @@ const Form = () => {
     document.title = "AppBooks | Recomendar";
   }, []);
   return (
-    <div className="card mt-4 bg-transparent">
+    <div className="card mt-4 bg-white">
       <div className="card-body">
         <form method="post" action="http://localhost:8081/posts/new" id="form">
           <div className="containerTitle mt-2">

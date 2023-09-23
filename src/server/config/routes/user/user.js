@@ -3,6 +3,8 @@ const router = express.Router();
 const mongoose = require("mongoose");
 require("../../models/User");
 const User = mongoose.model("User");
+require("../../models/Post");
+const Post = mongoose.model("posts");
 const bcrypt = require("bcrypt");
 
 // Rota para buscar o nome de usuário de um usuário cadastrado
@@ -118,6 +120,33 @@ router.post("/del", async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({ error: "Internal error saving category edit" });
+  }
+});
+
+// Rota para mostrar as publicações do usuário logado
+router.get("/my-recommendations/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    // Buscando no Banco de Dados se existe o usuário com o id passado
+    await User.findOne({ _id: id })
+      .lean()
+      .then((user) => {
+        // Se existir, pesquisaremos todos os posts em que na chave 'idUser' contém o id passado
+        if (user) {
+          Post.find({ idUser: user._id })
+            .populate({ path: "idUser", select: "username" })
+            .populate("category")
+            .lean()
+            .then((posts) => res.json(posts))
+            .catch((err) => res.json(err));
+        } else {
+          res.status(404).json({ error: "This user does not exist" });
+        }
+      })
+      .catch((err) => res.json(err));
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Internal error" });
   }
 });
 

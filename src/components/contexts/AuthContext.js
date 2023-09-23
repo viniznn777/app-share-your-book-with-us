@@ -4,6 +4,7 @@ import {
   alertMessage,
   errorMessage,
 } from "../utilities/toastMessages/ToastMessages";
+import Loader from "../utilities/Loader/Loader";
 
 const Context = createContext();
 
@@ -123,11 +124,7 @@ function AuthProvider({ children }) {
   }, [authenticated]);
 
   if (loadingUser) {
-    return (
-      <p className="fs-1" style={{ textAlign: "center" }}>
-        loading...
-      </p>
-    );
+    return <Loader />;
   }
   if (authenticated && !nameUser) {
     return (

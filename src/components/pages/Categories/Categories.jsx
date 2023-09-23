@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Container from "./Styles";
 import { errorMessage } from "../../utilities/toastMessages/ToastMessages";
 import { ToastContainer } from "react-toastify";
+import Loader from "../../utilities/Loader/Loader";
 
 const Categories = () => {
   const [data, setData] = useState([]);
@@ -35,7 +36,7 @@ const Categories = () => {
       <p className="fs-1 mt-4 fw-bold">Categorias: </p>
       <hr />
       {loading ? (
-        <p className="fs-2">Carregando Categorias...</p>
+        <Loader />
       ) : data.length > 0 ? (
         data.map((item, index) => (
           <div className="containerLinks" key={index}>

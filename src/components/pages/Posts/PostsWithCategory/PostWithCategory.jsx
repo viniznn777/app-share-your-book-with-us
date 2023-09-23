@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PostComponent from "../PostComponent";
+import Loader from "../../../utilities/Loader/Loader";
 
 const PostWithCategory = () => {
   const [data, setData] = useState([]);
@@ -18,7 +19,6 @@ const PostWithCategory = () => {
         if (response.ok) {
           const dataResponse = await response.json();
           setData(dataResponse);
-          console.log(dataResponse);
         }
       } catch (err) {
         console.log(err);
@@ -30,7 +30,7 @@ const PostWithCategory = () => {
   }, [slug]);
 
   return (
-    <div className="container" style={{ paddingTop: "90px" }}>
+    <div className="container" style={{ paddingTop: "99px" }}>
       {data.length > 0 ? (
         <div>
           <p className="fs-1 mt-4 fw-bold" style={{ textAlign: "center" }}>
@@ -40,9 +40,7 @@ const PostWithCategory = () => {
         </div>
       ) : null}
       {isLoading ? (
-        <p className="fs-2" style={{ color: "#ffffff", textAlign: "center" }}>
-          Loading posts...
-        </p>
+        <Loader />
       ) : data.length > 0 ? (
         data.map((item, index) => (
           <div className="container" key={index}>

@@ -12,8 +12,15 @@ const PostComponent = ({
   date,
   username,
 }) => {
+  const dataReturned = date;
+  const dataFormated = new Date(dataReturned);
+
+  const day = dataFormated.getDate();
+  const month = dataFormated.getMonth();
+  const year = dataFormated.getFullYear();
+
   return (
-    <ContainerPost className="container">
+    <ContainerPost className="container ">
       <div className="card mt-4">
         <div className="card-body">
           <p className="fs-1 fw-bold">{title}</p>
@@ -54,7 +61,7 @@ const PostComponent = ({
           <br />
           <small>
             <span className="fw-bold">Data: </span>
-            {date}
+            {`${day}/${month + 1 <= 9 ? "0" + (month + 1) : month + 1}/${year}`}
           </small>
         </div>
       </div>

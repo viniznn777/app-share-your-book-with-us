@@ -18,6 +18,13 @@ const Category = new Schema({
     type: Date,
     default: Date.now(),
   },
+  description: {
+    type: String,
+    required: true,
+  },
+  img: {
+    type: String,
+  },
 });
 
 mongoose.model("categories", Category);

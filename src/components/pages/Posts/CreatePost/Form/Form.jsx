@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Input from "../../../../utilities/Input";
+import BackButton from "../../../../utilities/BackButton/BackButton";
 
 const Form = () => {
   const [idUser, setIdUser] = useState("");
@@ -90,7 +91,7 @@ const Form = () => {
                 type="text"
                 label={true}
                 labelText="URL IMG: (optional)"
-                required={true}
+                required={false}
                 id="img"
                 nameInput="img"
                 value={img}
@@ -152,6 +153,7 @@ const Form = () => {
           <button type="submit" className="btn btn-success mt-4">
             Criar Postagem
           </button>
+          <BackButton to={"/"} text={"Voltar"} />
         </form>
       </div>
     </div>

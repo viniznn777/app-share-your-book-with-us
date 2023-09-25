@@ -35,17 +35,36 @@ const Categories = () => {
       <ToastContainer />
       <p className="fs-1 mt-4 fw-bold">Categorias: </p>
       <hr />
-      {loading ? (
-        <Loader />
-      ) : data.length > 0 ? (
-        data.map((item, index) => (
-          <div className="containerLinks" key={index}>
-            <Link to={`/categories/${item.slug}`} className="link">
-              <p className="fs-4">{item.name}</p>
-            </Link>
-          </div>
-        ))
-      ) : null}
+      <div className="container-cards">
+        {loading ? (
+          <Loader />
+        ) : data.length > 0 ? (
+          data.map((item, index) => (
+            <div key={index}>
+              <div className="card" style={{ width: "18rem" }}>
+                <div className="container-img">
+                  <img
+                    src={item.img}
+                    className="card-img-top img-fluid"
+                    alt={item.img}
+                    title={item.name}
+                    draggable={false}
+                  />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title">{item.name}</h5>
+                  <p className="card-text">{item.description}</p>
+                  <Link to={`/categories/${item.slug}`} className="link">
+                    <button className="btn btn-primary">
+                      Ver Recomendações
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : null}
+      </div>
     </Container>
   );
 };

@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import PostComponent from "../PostComponent";
 import Loader from "../../../utilities/Loader/Loader";
 
+import BackButton from "../../../utilities/BackButton/BackButton";
+
 const PostWithCategory = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -65,6 +67,7 @@ const PostWithCategory = () => {
             Ainda não há posts 🔎
           </p>
           <hr />
+          <BackButton to={"/categories"} text={"Voltar"} />
         </div>
       )}
     </div>

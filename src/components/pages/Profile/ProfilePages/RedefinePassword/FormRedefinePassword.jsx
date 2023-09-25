@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Input from "../../../../utilities/Input";
 import SendDataForm from "./SendDataForm";
 import { ToastContainer } from "react-toastify";
+import BackButton from "../../../../utilities/BackButton/BackButton";
 
 const FormRedefinePassword = () => {
   const [oldPassword, setOldPassword] = useState("");
@@ -53,6 +54,7 @@ const FormRedefinePassword = () => {
               required={false}
             />
             <button className="btn btn-success mt-4">Criar nova senha</button>
+            <BackButton to={"/my-profile"} text={"Voltar"} />
             <ToastContainer />
           </form>
         </div>

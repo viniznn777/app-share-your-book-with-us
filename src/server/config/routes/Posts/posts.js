@@ -47,4 +47,71 @@ router.post("/new", async (req, res) => {
   }
 });
 
+// Rota para Verificar se existe uma publicação com o id passado e verifica se o id de usuário passado na URL é o id do dono da publicação
+router.get("/edit/:id/:user", async (req, res) => {
+  try {
+    const { id, user } = req.params;
+
+    const post = await Post.findOne({ _id: id })
+      .lean()
+      .populate("category")
+      .populate({
+        path: "idUser",
+        select: "username",
+      });
+    if (post) {
+      if (post.idUser._id == user) {
+        res.status(200).json(post);
+      } else {
+        res.status(403).json({
+          message: "You are not the author of this publication!",
+          received_id: user,
+        });
+      }
+    } else {
+      res.status(404).json({ message: "Post not found!" });
+    }
+  } catch (err) {
+    res.status(500).json({ error: "There was an internal error" });
+  }
+});
+
+// Rota POST para edição de publicação
+router.post("/edit/:id/:user", async (req, res) => {
+  const { id, user } = req.params;
+  const { title, description, img, synopsis, category, author, slug } =
+    req.body;
+
+  try {
+    await Post.findOneAndUpdate(
+      { _id: id },
+      {
+        title,
+        description,
+        img,
+        synopsis,
+        category,
+        author,
+        slug,
+        idUser: user, // Id recebido da rota, sendo passado para a chave idUser que contém no model de Post
+      },
+      { new: true }
+    );
+    res.status(200).json({ message: "Recommendation edited successfully!" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Internal error saving Post edit" });
+  }
+});
+
+router.get("/delete-one/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Post.deleteOne({ _id: id });
+    res.status(200).json({ message: "Sucess to delete Post" });
+  } catch (err) {
+    res.json({ error: "Failed to delete category " + err });
+  }
+});
+
 module.exports = router;

@@ -123,6 +123,8 @@ function AuthProvider({ children }) {
     }
   }, [authenticated]);
 
+  const id = localStorage.getItem("username");
+
   if (loadingUser) {
     return <Loader />;
   }
@@ -142,6 +144,7 @@ function AuthProvider({ children }) {
         handleLogin,
         handleLogout,
         nameUser,
+        id,
       }}
     >
       {children}

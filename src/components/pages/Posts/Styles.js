@@ -14,6 +14,16 @@ const ContainerPost = styled.div`
     align-items: center;
     word-wrap: break-word;
   }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .container-buttons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  }
 `;
 
 export default ContainerPost;

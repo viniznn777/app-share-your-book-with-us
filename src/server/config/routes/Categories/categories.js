@@ -20,8 +20,8 @@ router.get("/", async (req, res) => {
 
 router.post("/new", async (req, res) => {
   try {
-    const { name, slug, restrictModel } = req.body;
-    const newCategory = { name, slug, restrictModel };
+    const { name, slug, restrictModel, description, img } = req.body;
+    const newCategory = { name, slug, restrictModel, description, img };
     await new Category(newCategory).save();
     res.status(200);
   } catch (err) {
@@ -32,12 +32,18 @@ router.post("/new", async (req, res) => {
 });
 
 router.post("/edit", async (req, res) => {
-  const { id, name, slug, restrictModel } = req.body;
+  const { id, name, slug, restrictModel, description, img } = req.body;
 
   try {
     await Category.findOneAndUpdate(
       { _id: id },
-      { name: name, slug: slug, restrictModel: restrictModel },
+      {
+        name: name,
+        slug: slug,
+        restrictModel: restrictModel,
+        description: description,
+        img: img,
+      },
       { new: true }
     );
     res.status(200);

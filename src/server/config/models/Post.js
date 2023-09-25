@@ -12,7 +12,7 @@ const Post = new Schema({
   },
   img: {
     type: String,
-    required: true,
+    required: false,
   },
   synopsis: {
     type: String,

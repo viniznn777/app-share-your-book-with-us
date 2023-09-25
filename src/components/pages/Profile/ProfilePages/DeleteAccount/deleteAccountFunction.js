@@ -27,6 +27,9 @@ export default async function sendDataForm(
         // Caso a response for ok, será executada a funcão que será passada como parâmetro, vindo diretamente do Context AuthContext. Neste caso seria a função de logout
         functionContext();
       }, 2000);
+    } else if (response.status === 400) {
+      errorMessage("Senha incorreta, tente novamente!");
+      return;
     }
   } catch (err) {
     console.log(err);

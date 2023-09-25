@@ -134,6 +134,7 @@ router.get("/my-recommendations/:id", async (req, res) => {
         // Se existir, pesquisaremos todos os posts em que na chave 'idUser' contém o id passado
         if (user) {
           Post.find({ idUser: user._id })
+            .sort({ date: "desc" })
             .populate({ path: "idUser", select: "username" })
             .populate("category")
             .lean()

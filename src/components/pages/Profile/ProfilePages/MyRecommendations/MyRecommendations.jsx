@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import ContainerMyRecommendations from "./Styles";
 import { errorMessage } from "../../../../utilities/toastMessages/ToastMessages";
 import Loader from "../../../../utilities/Loader/Loader";
 import PostComponent from "../../../Posts/PostComponent";
+import BackButton from "../../../../utilities/BackButton/BackButton";
+import { Context } from "../../../../contexts/AuthContext";
 
 const MyRecommendations = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const { id } = useContext(Context);
 
   useEffect(() => {
     (async () => {
@@ -35,6 +38,7 @@ const MyRecommendations = () => {
       <hr />
       <p className="fs-1 fw-semibold">Minhas Recomendações:</p>
       <hr />
+      <BackButton to={"/my-profile"} text={"Voltar"} />
       {isLoading ? (
         <Loader />
       ) : data.length > 0 ? (
@@ -50,10 +54,15 @@ const MyRecommendations = () => {
             date={item.date}
             username={item.idUser.username}
             key={index}
+            EditAndDelete={true}
+            idUser={id}
+            idRecommendation={item._id}
           />
         ))
       ) : (
-        <p className="fs-2 f2-semibold">Não há recomendações recebidas. 🔎</p>
+        <div>
+          <p className="fs-2 f2-semibold">Não há recomendações recebidas. 🔎</p>
+        </div>
       )}
     </ContainerMyRecommendations>
   );

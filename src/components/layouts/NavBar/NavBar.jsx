@@ -48,7 +48,7 @@ const NavBar = () => {
               <div className="container-info-username-button-logout">
                 <li className="nav-item">
                   <button className="btn btn-success" onClick={handleLogout}>
-                    <MdLogout />
+                    <MdLogout /> Sair
                   </button>
                 </li>
                 <div className="container-profile">

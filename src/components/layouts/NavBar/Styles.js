@@ -42,6 +42,9 @@ const NavBarContainer = styled.nav`
     }
     gap: 33px;
   }
+  .navbar-brand {
+    font-family: "Croissant One", cursive;
+  }
 
   @media screen and (max-width: 991px) {
     .container-info-username-button-logout {

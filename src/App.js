@@ -13,6 +13,7 @@ import RedefinePassword from "./components/pages/Profile/ProfilePages/RedefinePa
 import RedefineEmail from "./components/pages/Profile/ProfilePages/RedefineEmail/RedefineEmail";
 import DeleteAccount from "./components/pages/Profile/ProfilePages/DeleteAccount/DeleteAccount.jsx";
 import MyRecommendations from "./components/pages/Profile/ProfilePages/MyRecommendations/MyRecommendations";
+import EditRecommendation from "./components/pages/Profile/ProfilePages/MyRecommendations/EditRecommendation.jsx/EditRecommendation";
 
 function App() {
   return (
@@ -32,6 +33,10 @@ function App() {
             <Route
               path="/my-recommendations"
               element={<PrivateRoute item={<MyRecommendations />} />}
+            ></Route>
+            <Route
+              path="/posts/edit/:id/:user"
+              element={<PrivateRoute item={<EditRecommendation />} />}
             ></Route>
             <Route
               path="/redefine-password"

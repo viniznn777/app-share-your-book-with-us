@@ -3,6 +3,7 @@ import Input from "../../../../utilities/Input";
 import sendDataForm from "./deleteAccountFunction";
 import { Context } from "../../../../contexts/AuthContext";
 import { ToastContainer } from "react-toastify";
+import BackButton from "../../../../utilities/BackButton/BackButton";
 
 const FormDeleteAccount = () => {
   const [password, setPassword] = useState("");
@@ -64,6 +65,8 @@ const FormDeleteAccount = () => {
             <button className="btn btn-outline-danger mt-4">
               Deletar conta
             </button>
+            <br />
+            <BackButton to={"/my-profile"} text={"Voltar"} />
             <ToastContainer />
           </form>
         </div>

@@ -9,6 +9,7 @@ const categories = require("./config/routes/Categories/categories");
 const posts = require("./config/routes/Posts/posts");
 const auth = require("./config/routes/auth/auth");
 const user = require("./config/routes/user/user");
+const admin = require("./config/routes/admin/admin");
 
 app.use(
   session({
@@ -43,6 +44,7 @@ app.use("/categories", categories);
 app.use("/posts", posts);
 app.use("/api/auth", auth);
 app.use("/return/user/", user);
+app.use("/admin", admin);
 
 app.listen(PORT, () => {
   console.log(`Server started successfuly. http://localhost:${PORT}`);

@@ -37,6 +37,21 @@ const ContainerProfile = styled.div`
     justify-content: center;
     width: 100%;
   }
+  hr {
+    color: green;
+  }
+  .container-links-adm {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 9px;
+  }
+  @media screen and (max-width: 991px) {
+    .container-links-adm {
+      flex-direction: column;
+    }
+  }
 `;
 
 export default ContainerProfile;

@@ -3,6 +3,7 @@ import ContainerPost from "./Styles";
 import { Link } from "react-router-dom";
 import DeletePost from "./DeletePost";
 import { ToastContainer } from "react-toastify";
+import { dataFormated } from "../../utilities/dataFormated";
 
 const PostComponent = ({
   title,
@@ -18,13 +19,6 @@ const PostComponent = ({
   idRecommendation,
   idUser,
 }) => {
-  const dataReturned = date;
-  const dataFormated = new Date(dataReturned);
-
-  const day = dataFormated.getDate();
-  const month = dataFormated.getMonth();
-  const year = dataFormated.getFullYear();
-
   return (
     <ContainerPost className="container ">
       <div className="card mt-4">
@@ -94,7 +88,7 @@ const PostComponent = ({
           <br />
           <small>
             <span className="fw-bold">Data: </span>
-            {`${day}/${month + 1 <= 9 ? "0" + (month + 1) : month + 1}/${year}`}
+            {dataFormated(date)}
           </small>
         </div>
         <ToastContainer />

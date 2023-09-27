@@ -14,51 +14,66 @@ import RedefineEmail from "./components/pages/Profile/ProfilePages/RedefineEmail
 import DeleteAccount from "./components/pages/Profile/ProfilePages/DeleteAccount/DeleteAccount.jsx";
 import MyRecommendations from "./components/pages/Profile/ProfilePages/MyRecommendations/MyRecommendations";
 import EditRecommendation from "./components/pages/Profile/ProfilePages/MyRecommendations/EditRecommendation.jsx/EditRecommendation";
+import { PrivateRouteAdmin } from "./components/utilities/PrivateRouteADM";
+import { IsAdminProvider } from "./components/contexts/IsAdminContext";
+
+// PÁGINAS DE ACESSO ADMINISTRADOR
+import AccessDenied from "./components/pages/admin/pages/AccessDenied/AccessDenied";
+import ALL_USERS_ADMIN from "./components/pages/admin/pages/AllUsers.Admin/AllUsers.Admin";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <AuthProvider>
-          <NavBar />
-          <Routes>
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/categories" element={<Categories />}></Route>
-            <Route
-              path="/my-profile"
-              element={<PrivateRoute item={<Profile />} />}
-            ></Route>
-            <Route
-              path="/my-recommendations"
-              element={<PrivateRoute item={<MyRecommendations />} />}
-            ></Route>
-            <Route
-              path="/posts/edit/:id/:user"
-              element={<PrivateRoute item={<EditRecommendation />} />}
-            ></Route>
-            <Route
-              path="/redefine-password"
-              element={<PrivateRoute item={<RedefinePassword />} />}
-            ></Route>
-            <Route
-              path="/redefine-email"
-              element={<PrivateRoute item={<RedefineEmail />} />}
-            ></Route>
-            <Route
-              path="/delete-account"
-              element={<PrivateRoute item={<DeleteAccount />} />}
-            ></Route>
-            <Route
-              path="/posts/new"
-              element={<PrivateRoute item={<CreatePost />} />}
-            ></Route>
-            <Route
-              path="/categories/:slug"
-              element={<PostWithCategory />}
-            ></Route>
-          </Routes>
+          <IsAdminProvider>
+            <NavBar />
+            <Routes>
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/signin" element={<SignIn />} />
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/categories" element={<Categories />}></Route>
+              <Route
+                path="/my-profile"
+                element={<PrivateRoute item={<Profile />} />}
+              ></Route>
+              <Route
+                path="/my-recommendations"
+                element={<PrivateRoute item={<MyRecommendations />} />}
+              ></Route>
+              <Route
+                path="/posts/edit/:id/:user"
+                element={<PrivateRoute item={<EditRecommendation />} />}
+              ></Route>
+              <Route
+                path="/redefine-password"
+                element={<PrivateRoute item={<RedefinePassword />} />}
+              ></Route>
+              <Route
+                path="/redefine-email"
+                element={<PrivateRoute item={<RedefineEmail />} />}
+              ></Route>
+              <Route
+                path="/delete-account"
+                element={<PrivateRoute item={<DeleteAccount />} />}
+              ></Route>
+              <Route
+                path="/posts/new"
+                element={<PrivateRoute item={<CreatePost />} />}
+              ></Route>
+              <Route
+                path="/categories/:slug"
+                element={<PostWithCategory />}
+              ></Route>
+              {/* Páginas de ADMIN */}
+              <Route path="/access_denied" element={<AccessDenied />}></Route>
+              <Route
+                path="/admin/users"
+                exact={true}
+                element={<PrivateRouteAdmin item={<ALL_USERS_ADMIN />} />}
+              ></Route>
+            </Routes>
+          </IsAdminProvider>
         </AuthProvider>
       </BrowserRouter>
     </div>

@@ -12,7 +12,7 @@ const EditRecommendation = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Chamando a função onLoad para que use a funcão sendData para fazer a validação se os valores passados na url são válidos, caso não sejam, será o formulário de edição não será carregado, e será mostrado uma mensagem dizendo que não foi possível carregar a página, pedindo para que verifique a url
+    // Chamando a função onLoad para que use a funcão ValidateURLData para fazer a validação se os valores passados na url são válidos, caso não sejam, o formulário de edição não será carregado, e será mostrado uma mensagem dizendo que não foi possível carregar a página, pedindo para que verifique a url
     async function onLoad() {
       setIsLoading(true);
       try {

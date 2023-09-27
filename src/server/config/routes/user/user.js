@@ -23,6 +23,21 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// Rota para buscar se o usuário é um administrador
+router.get("/:id/a_d_m/verify", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findOne({ _id: id });
+    if (!user) {
+      return res.status(400).json({ message: "User not found!" });
+    }
+
+    res.status(200).json({ isAdmin: user.adm });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 // Rota para retornar o email do usuário
 router.get("/:id/em", async (req, res) => {
   const { id } = req.params;

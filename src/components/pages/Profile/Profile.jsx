@@ -3,9 +3,11 @@ import ContainerProfile from "./Styles";
 import { Context } from "../../contexts/AuthContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ContextAdmin } from "../../contexts/IsAdminContext";
 
 const Profile = () => {
   const { nameUser } = useContext(Context);
+  const { isAdmin } = useContext(ContextAdmin);
 
   useEffect(() => {
     document.title = "AppBooks | Meu Perfil";
@@ -39,6 +41,35 @@ const Profile = () => {
             Deletar minha conta
           </button>
         </Link>
+        {isAdmin ? (
+          <>
+            <div>
+              <hr />
+              <p className="fs-6 fw-bold text-success">
+                Você é um administrador
+              </p>
+              <hr />
+            </div>
+            <div className="container-links-adm">
+              <Link to="/my-recommendations">
+                <button className="btn btn-success">
+                  Editar/Deletar Categorias
+                </button>
+              </Link>
+              <Link to="/my-recommendations">
+                <button className="btn btn-success">Criar Categoria</button>
+              </Link>
+              <Link to="/my-recommendations">
+                <button className="btn btn-success">
+                  Deletar Recomendações
+                </button>
+              </Link>
+              <Link to="/admin/users">
+                <button className="btn btn-success">Ver Usuários</button>
+              </Link>
+            </div>
+          </>
+        ) : null}
       </div>
     </ContainerProfile>
   );

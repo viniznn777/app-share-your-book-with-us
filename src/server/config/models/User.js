@@ -13,6 +13,15 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  adm: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+  date: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);

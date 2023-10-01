@@ -9,9 +9,8 @@ const bcrypt = require("bcrypt");
 
 // Rota para buscar o nome de usuário de um usuário cadastrado
 router.get("/:id", async (req, res) => {
-  const { id } = req.params;
-
   try {
+    const { id } = req.params;
     const user = await User.findOne({ _id: id });
     if (!user) {
       return res.status(400).json({ message: "User not found!" });
@@ -40,9 +39,8 @@ router.get("/:id/a_d_m/verify", async (req, res) => {
 
 // Rota para retornar o email do usuário
 router.get("/:id/em", async (req, res) => {
-  const { id } = req.params;
-
   try {
+    const { id } = req.params;
     const user = await User.findOne({ _id: id });
     if (!user) {
       return res.status(400).json({ message: "User not found!" });
@@ -79,10 +77,10 @@ router.post("/redefine-password", async (req, res) => {
       { password: hashedPassword },
       { new: true }
     );
-    res.status(200).json({ message: "Password changed successfully!" });
+    return res.status(200).json({ message: "Password changed successfully!" });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: "Internal error" });
+    return res.status(500).json({ error: "Internal error" });
   }
 });
 
@@ -103,10 +101,10 @@ router.post("/redefine-email", async (req, res) => {
       { email: newEmail },
       { new: true }
     );
-    res.status(200).json({ message: "Email changed successfully!" });
+    return res.status(200).json({ message: "Email changed successfully!" });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: "Internal error" });
+    return res.status(500).json({ error: "Internal error" });
   }
 });
 
@@ -131,10 +129,12 @@ router.post("/del", async (req, res) => {
 
     await User.deleteOne({ _id: id });
 
-    res.status(200).json({ message: "User deleted" });
+    return res.status(200).json({ message: "User deleted" });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: "Internal error saving category edit" });
+    return res
+      .status(500)
+      .json({ error: "Internal error saving category edit" });
   }
 });
 
@@ -156,13 +156,13 @@ router.get("/my-recommendations/:id", async (req, res) => {
             .then((posts) => res.json(posts))
             .catch((err) => res.json(err));
         } else {
-          res.status(404).json({ error: "This user does not exist" });
+          return res.status(404).json({ error: "This user does not exist" });
         }
       })
       .catch((err) => res.json(err));
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: "Internal error" });
+    return res.status(500).json({ error: "Internal error" });
   }
 });
 

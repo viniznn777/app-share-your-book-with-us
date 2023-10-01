@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../contexts/AuthContext";
 import NavBarContainer from "./Styles";
-import { CgProfile } from "react-icons/cg";
 import { MdLogout } from "react-icons/md";
 import Logo from "../../../images/pilha-de-livros.png";
 
@@ -13,7 +12,12 @@ const NavBar = () => {
     <NavBarContainer className="navbar navbar-expand-lg  navbar-dark bg-dark nv">
       <div className="container-fluid">
         <Link to={"/"} className="navbar-brand" draggable="false">
-          <img src={Logo} alt="Logo AppBooks" draggable="false" />
+          <img
+            src={Logo}
+            alt="Logo AppBooks"
+            draggable="false"
+            className="logo"
+          />
           &nbsp; AppBooks
         </Link>
         <button
@@ -51,12 +55,14 @@ const NavBar = () => {
                     <MdLogout /> Sair
                   </button>
                 </li>
-                <div className="container-profile">
+                <div className="container-profile" title="Ver Perfil">
                   <Link to={"/my-profile"} className="icon username">
                     <p className="username">{nameUser}</p>
-                    <p>
-                      <CgProfile />
-                    </p>
+                    <img
+                      src={`https://api.dicebear.com/7.x/initials/svg?seed=${nameUser}&size=40&radius=50`}
+                      alt={nameUser}
+                      className="avatar"
+                    />
                   </Link>
                 </div>
               </div>

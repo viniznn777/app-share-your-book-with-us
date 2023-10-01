@@ -17,10 +17,10 @@ router.get("/", async (req, res) => {
       .sort({ date: "desc" });
 
     if (response) {
-      res.status(200).json(response);
+      return res.status(200).json(response);
     }
   } catch (err) {
-    res.status(500).json({ error: "There was an internal error" });
+    return res.status(500).json({ error: "There was an internal error" });
   }
 });
 
@@ -39,9 +39,9 @@ router.post("/new", async (req, res) => {
       idUser: id, // Id recebido de um input hidden do front-end, sendo passado para a chave idUser que contém no model de Post
     };
     await new Post(newPost).save();
-    res.status(200).redirect("http://localhost:3000/");
+    return res.status(200).redirect("http://localhost:3000/");
   } catch (err) {
-    res
+    return res
       .status(400)
       .json({ error: "There was an error registering your post " + err });
   }
@@ -61,18 +61,18 @@ router.get("/edit/:id/:user", async (req, res) => {
       });
     if (post) {
       if (post.idUser._id == user) {
-        res.status(200).json(post);
+        return res.status(200).json(post);
       } else {
-        res.status(403).json({
+        return res.status(403).json({
           message: "You are not the author of this publication!",
           received_id: user,
         });
       }
     } else {
-      res.status(404).json({ message: "Post not found!" });
+      return res.status(404).json({ message: "Post not found!" });
     }
   } catch (err) {
-    res.status(500).json({ error: "There was an internal error" });
+    return res.status(500).json({ error: "There was an internal error" });
   }
 });
 
@@ -97,10 +97,12 @@ router.post("/edit/:id/:user", async (req, res) => {
       },
       { new: true }
     );
-    res.status(200).json({ message: "Recommendation edited successfully!" });
+    return res
+      .status(200)
+      .json({ message: "Recommendation edited successfully!" });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: "Internal error saving Post edit" });
+    return res.status(500).json({ error: "Internal error saving Post edit" });
   }
 });
 
@@ -108,9 +110,9 @@ router.get("/delete-one/:id", async (req, res) => {
   try {
     const { id } = req.params;
     await Post.deleteOne({ _id: id });
-    res.status(200).json({ message: "Sucess to delete Post" });
+    return res.status(200).json({ message: "Success to delete Post" });
   } catch (err) {
-    res.json({ error: "Failed to delete category " + err });
+    return res.json({ error: "Failed to delete category " + err });
   }
 });
 

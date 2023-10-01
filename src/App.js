@@ -20,6 +20,7 @@ import { IsAdminProvider } from "./components/contexts/IsAdminContext";
 // PÁGINAS DE ACESSO ADMINISTRADOR
 import AccessDenied from "./components/pages/admin/pages/AccessDenied/AccessDenied";
 import ALL_USERS_ADMIN from "./components/pages/admin/pages/AllUsers.Admin/AllUsers.Admin";
+import DELETE_RECOMMENDATIONS_ADMIN from "./components/pages/admin/pages/DeleteRecommendations.Admin/DeleteRecommendations.Admin";
 
 function App() {
   return (
@@ -71,6 +72,13 @@ function App() {
                 path="/admin/users"
                 exact={true}
                 element={<PrivateRouteAdmin item={<ALL_USERS_ADMIN />} />}
+              ></Route>
+              <Route
+                path="/admin/delete/recommendations"
+                exact={true}
+                element={
+                  <PrivateRouteAdmin item={<DELETE_RECOMMENDATIONS_ADMIN />} />
+                }
               ></Route>
             </Routes>
           </IsAdminProvider>

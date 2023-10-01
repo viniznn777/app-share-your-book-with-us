@@ -28,6 +28,7 @@ const ALL_USERS_ADMIN = () => {
         setLoading(false);
       }
     })();
+    document.title = "AppBooks | Gerenciar usuários";
   }, [id]);
 
   return (
@@ -49,7 +50,7 @@ const ALL_USERS_ADMIN = () => {
             username={item.username}
             email={item.email}
             password={item.password}
-            id={item._id}
+            idUser={item._id}
             date={item.date}
             adm={item.adm}
             key={index}

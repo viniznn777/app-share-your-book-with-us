@@ -11,10 +11,10 @@ router.get("/", async (req, res) => {
     const response = await Category.find().lean().sort({ date: "desc" });
 
     if (response) {
-      res.status(200).json(response);
+      return res.status(200).json(response);
     }
   } catch (err) {
-    res.status(500).json({ error: "There was an internal error" });
+    return res.status(500).json({ error: "There was an internal error" });
   }
 });
 
@@ -23,9 +23,9 @@ router.post("/new", async (req, res) => {
     const { name, slug, restrictModel, description, img } = req.body;
     const newCategory = { name, slug, restrictModel, description, img };
     await new Category(newCategory).save();
-    res.status(200);
+    return res.status(200);
   } catch (err) {
-    res
+    return res
       .status(400)
       .json({ error: "There was an error registering your category " + err });
   }
@@ -46,10 +46,12 @@ router.post("/edit", async (req, res) => {
       },
       { new: true }
     );
-    res.status(200);
+    return res.status(200);
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: "Internal error saving category edit" });
+    return res
+      .status(500)
+      .json({ error: "Internal error saving category edit" });
   }
 });
 
@@ -57,9 +59,9 @@ router.post("/delete-one", async (req, res) => {
   try {
     const { id } = req.body;
     await Category.deleteOne({ _id: id });
-    res.status(200);
+    return res.status(200);
   } catch (err) {
-    res.json({ error: "Failed to delete category " + err });
+    return res.json({ error: "Failed to delete category " + err });
   }
 });
 
@@ -86,11 +88,13 @@ router.get("/:slug", async (req, res) => {
               res.json(err);
             });
         } else {
-          res.status(404).json({ error: "This category does not exist" });
+          return res
+            .status(404)
+            .json({ error: "This category does not exist" });
         }
       })
       .catch((err) => {
-        res.json(err);
+        return res.json(err);
       });
   } catch (err) {
     console.log(err);

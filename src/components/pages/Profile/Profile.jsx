@@ -51,7 +51,7 @@ const Profile = () => {
               <hr />
             </div>
             <div className="container-links-adm">
-              <Link to="/my-recommendations">
+              <Link to="/">
                 <button className="btn btn-success">
                   Editar/Deletar Categorias
                 </button>
@@ -59,13 +59,13 @@ const Profile = () => {
               <Link to="/my-recommendations">
                 <button className="btn btn-success">Criar Categoria</button>
               </Link>
-              <Link to="/my-recommendations">
+              <Link to="/admin/delete/recommendations">
                 <button className="btn btn-success">
                   Deletar Recomendações
                 </button>
               </Link>
               <Link to="/admin/users">
-                <button className="btn btn-success">Ver Usuários</button>
+                <button className="btn btn-success">Gerenciar Usuários</button>
               </Link>
             </div>
           </>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import DeletePost from "./DeletePost";
 import { ToastContainer } from "react-toastify";
 import { dataFormated } from "../../utilities/dataFormated";
+import { FaRegEdit } from "react-icons/fa";
 
 const PostComponent = ({
   title,
@@ -15,7 +16,8 @@ const PostComponent = ({
   slug,
   date,
   username,
-  EditAndDelete = false,
+  Edit = false,
+  Delete = false,
   idRecommendation,
   idUser,
 }) => {
@@ -25,23 +27,29 @@ const PostComponent = ({
         <div className="card-body">
           <div className="title">
             <p className="fs-1 fw-bold">{title}</p>
-            {EditAndDelete ? (
-              <div className="container-buttons">
-                <Link
-                  to={`http://localhost:3000/posts/edit/${idRecommendation}/${idUser}`}
-                >
-                  <button className="btn btn-secondary">
-                    Editar Recomendação
+            <div className="container-buttons">
+              {Edit ? (
+                <div className="container-buttons">
+                  <Link
+                    to={`http://localhost:3000/posts/edit/${idRecommendation}/${idUser}`}
+                  >
+                    <button className="btn btn-secondary">
+                      <FaRegEdit />
+                    </button>
+                  </Link>
+                </div>
+              ) : null}
+              {Delete ? (
+                <div className="container-buttons">
+                  <button
+                    className="btn btn-outline-danger"
+                    onClick={() => DeletePost(idRecommendation)}
+                  >
+                    Deletar
                   </button>
-                </Link>
-                <button
-                  className="btn btn-outline-danger"
-                  onClick={() => DeletePost(idRecommendation)}
-                >
-                  Deletar
-                </button>
-              </div>
-            ) : null}
+                </div>
+              ) : null}
+            </div>
           </div>
           <hr />
           <div className="container-avatar">

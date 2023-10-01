@@ -54,7 +54,8 @@ const MyRecommendations = () => {
             date={item.date}
             username={item.idUser.username}
             key={index}
-            EditAndDelete={true}
+            Edit={true}
+            Delete={true}
             idUser={id}
             idRecommendation={item._id}
           />

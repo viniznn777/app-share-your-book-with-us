@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const NavBarContainer = styled.nav`
-  img {
+  img.logo {
     width: 80px;
     height: 80px;
   }
@@ -18,14 +18,18 @@ const NavBarContainer = styled.nav`
     position: absolute;
     right: 0;
     margin-right: 33px;
+    display: flex;
+    align-items: center;
+    gap: 33px;
+    img {
+      margin-bottom: 5px;
+    }
     .btn-success {
       font-size: 1.2rem;
       svg {
         margin-bottom: 6px;
       }
     }
-    display: flex;
-    align-items: center;
     .container-profile {
       .username {
         display: flex;
@@ -35,12 +39,9 @@ const NavBarContainer = styled.nav`
         color: #fff;
         font-size: 1.25rem;
         text-decoration: none;
-        svg {
-          order: 2;
-        }
+        margin-top: 4px;
       }
     }
-    gap: 33px;
   }
   .navbar-brand {
     font-family: "Croissant One", cursive;

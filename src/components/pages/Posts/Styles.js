@@ -24,6 +24,14 @@ const ContainerPost = styled.div`
       gap: 15px;
     }
   }
+  .btn-secondary {
+    font-size: 1.1rem;
+    font-weight: bold;
+    svg {
+      margin-bottom: 5px;
+      margin-left: 3px;
+    }
+  }
 `;
 
 export default ContainerPost;

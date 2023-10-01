@@ -31,10 +31,10 @@ router.post("/register", async (req, res) => {
       },
       "e9f6ffeceb68d556ecba3ec3b828d560db40ca10c2eb74e74d7f6c64d12a54c5"
     ); // secretKey
-    res.status(201).json({ user: user._id, token });
+    return res.status(201).json({ user: user._id, token });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: "Error in registration" });
+    return res.status(500).json({ message: "Error in registration" });
   }
 });
 
@@ -58,10 +58,10 @@ router.post("/login", async (req, res) => {
       { _id: user._id },
       "e9f6ffeceb68d556ecba3ec3b828d560db40ca10c2eb74e74d7f6c64d12a54c5"
     );
-    res.json({ user: user._id, token });
+    return res.json({ user: user._id, token });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: "Error when trying to login" });
+    return res.status(500).json({ message: "Error when trying to login" });
   }
 });
 

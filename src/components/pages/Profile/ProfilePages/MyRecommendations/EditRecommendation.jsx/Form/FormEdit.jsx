@@ -172,7 +172,7 @@ const FormEdit = () => {
               </div>
             </div>
             <button type="submit" className="btn btn-success mt-4">
-              Criar Postagem
+              Enviar edição
             </button>
             <ToastContainer />
             <BackButton to={"/my-recommendations"} text={"Voltar"} />

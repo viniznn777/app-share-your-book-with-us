@@ -4,6 +4,7 @@ import PostComponent from "../../../Posts/PostComponent";
 import Loader from "../../../../utilities/Loader/Loader";
 import { ToastContainer } from "react-toastify";
 import { errorMessage } from "../../../../utilities/toastMessages/ToastMessages";
+import BackButton from "../../../../utilities/BackButton/BackButton";
 
 const DELETE_RECOMMENDATIONS_ADMIN = () => {
   const [data, setData] = useState([]);
@@ -36,6 +37,7 @@ const DELETE_RECOMMENDATIONS_ADMIN = () => {
         <hr />
         <p className="fs-1">Deletar Recomendações: </p>
         <hr />
+        <BackButton to={"/my-profile"} text={"Voltar"} />
       </div>
 
       {isLoading ? (

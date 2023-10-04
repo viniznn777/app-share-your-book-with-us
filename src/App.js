@@ -21,6 +21,9 @@ import { IsAdminProvider } from "./components/contexts/IsAdminContext";
 import AccessDenied from "./components/pages/admin/pages/AccessDenied/AccessDenied";
 import ALL_USERS_ADMIN from "./components/pages/admin/pages/AllUsers.Admin/AllUsers.Admin";
 import DELETE_RECOMMENDATIONS_ADMIN from "./components/pages/admin/pages/DeleteRecommendations.Admin/DeleteRecommendations.Admin";
+import CREATE_CATEGORY from "./components/pages/admin/pages/CreateCategory/CreateCategory";
+import EDIT_AND_DELETE_CATEGORY from "./components/pages/admin/pages/EditAndDeleteCategory.Admin/EditAndDeleteCategory";
+import EDIT_CATEGORY_ADMIN from "./components/pages/admin/pages/EditAndDeleteCategory.Admin/EditCategory/EditPage";
 
 function App() {
   return (
@@ -79,6 +82,23 @@ function App() {
                 element={
                   <PrivateRouteAdmin item={<DELETE_RECOMMENDATIONS_ADMIN />} />
                 }
+              ></Route>
+              <Route
+                path="/admin/new/categories"
+                exact={true}
+                element={<PrivateRouteAdmin item={<CREATE_CATEGORY />} />}
+              ></Route>
+              <Route
+                path="/admin/categories/edit-delete"
+                exact={true}
+                element={
+                  <PrivateRouteAdmin item={<EDIT_AND_DELETE_CATEGORY />} />
+                }
+              ></Route>
+              <Route
+                path="/admin/categories/edit/:id"
+                exact={true}
+                element={<PrivateRouteAdmin item={<EDIT_CATEGORY_ADMIN />} />}
               ></Route>
             </Routes>
           </IsAdminProvider>

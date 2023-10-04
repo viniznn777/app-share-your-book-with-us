@@ -51,12 +51,12 @@ const Profile = () => {
               <hr />
             </div>
             <div className="container-links-adm">
-              <Link to="/">
+              <Link to="/admin/categories/edit-delete">
                 <button className="btn btn-success">
                   Editar/Deletar Categorias
                 </button>
               </Link>
-              <Link to="/my-recommendations">
+              <Link to="/admin/new/categories">
                 <button className="btn btn-success">Criar Categoria</button>
               </Link>
               <Link to="/admin/delete/recommendations">

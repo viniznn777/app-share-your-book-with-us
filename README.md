@@ -62,5 +62,5 @@ Este projeto está licenciado.
 
 #### Atualizações futuras:
 
-- Adicionar a página de Editar e deletar Categoria, em usuários com acesso de administrador
-- Adicionar a página de Criar categorias de usuários com acesso de administrador
+- Corrigir o Problema de ver posts com determinada categoria
+-

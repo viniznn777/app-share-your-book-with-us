@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Container from "./Styles";
-import { errorMessage } from "../../utilities/toastMessages/ToastMessages";
+import { errorMessage } from "../../../../utilities/toastMessages/ToastMessages";
 import { ToastContainer } from "react-toastify";
-import Loader from "../../utilities/Loader/Loader";
-import CategoryCard from "./CategoryCard";
+import Loader from "../../../../utilities/Loader/Loader";
+import CategoryCard from "../../../Categories/CategoryCard";
 
-const Categories = () => {
+const EDIT_AND_DELETE_CATEGORY = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -33,8 +33,11 @@ const Categories = () => {
   return (
     <Container className="container">
       <ToastContainer />
-      <p className="fs-1 mt-4 fw-bold">Categorias: </p>
-      <hr />
+      <div>
+        <hr />
+        <p className="fs-1 mt-4 fw-bold">Editar/Deletar Categorias: </p>
+        <hr />
+      </div>
       <div className="container-cards">
         {loading ? (
           <Loader />
@@ -47,8 +50,8 @@ const Categories = () => {
               slug={item.slug}
               id={item._id}
               key={index}
-              deleteButton={false}
-              editButton={false}
+              deleteButton={true}
+              editButton={true}
             />
           ))
         ) : null}
@@ -57,4 +60,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default EDIT_AND_DELETE_CATEGORY;

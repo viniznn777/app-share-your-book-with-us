@@ -27,7 +27,7 @@ const EDIT_AND_DELETE_CATEGORY = () => {
       }
     }
     fetchData();
-    document.title = "AppBooks | Categorias";
+    document.title = "AppBooks | Editar/Deletar Categorias";
   }, []);
 
   return (

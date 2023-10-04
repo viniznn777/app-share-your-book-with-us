@@ -82,7 +82,6 @@ router.post("/delete-one", async (req, res) => {
 router.get("/:slug", async (req, res) => {
   try {
     const { slug } = req.params;
-    console.log(slug);
     const category = await Category.findOne({ slug: slug }).lean();
 
     if (category) {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from "../../../../../utilities/Input";
 import { ToastContainer } from "react-toastify";
 import { SendData } from "./SendDataForm";
@@ -10,6 +10,10 @@ const FormCreateCategory = () => {
   const [description, setDescription] = useState("");
   const [img, setImg] = useState("");
   const restrictModel = true;
+
+  useEffect(() => {
+    document.title = "AppBooks | Criar Categoria";
+  });
 
   return (
     <div className="container">

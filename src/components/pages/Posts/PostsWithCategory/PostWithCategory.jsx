@@ -15,7 +15,7 @@ const PostWithCategory = () => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:8081/categories/${slug}`
+          `http://localhost:8081/categories/posts/${slug}`
         );
 
         if (response.ok) {
@@ -35,10 +35,12 @@ const PostWithCategory = () => {
     <div className="container" style={{ paddingTop: "99px" }}>
       {data.length > 0 ? (
         <div>
+          <hr />
           <p className="fs-1 mt-4 fw-bold" style={{ textAlign: "center" }}>
             {data[0].category.name}
           </p>
           <hr />
+          <BackButton to={"/categories"} text={"Voltar"} />
         </div>
       ) : null}
       {isLoading ? (

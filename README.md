@@ -62,5 +62,9 @@ Este projeto está licenciado.
 
 #### Atualizações futuras:
 
-- Corrigir o Problema de ver posts com determinada categoria
--
+- Aprimorar o layout do blog
+- Refatoração de códigos
+
+### Correções:
+
+- Corrigido o problema de ver posts com a categoria selecionada (04/10/23)

@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Rota que restorna uma categoria através do seu id
+// Rota que retorna uma categoria através do seu id
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -79,19 +79,18 @@ router.post("/delete-one", async (req, res) => {
   }
 });
 
-router.get("/:slug", async (req, res) => {
+router.get("/posts/:slug", async (req, res) => {
   try {
     const { slug } = req.params;
     const category = await Category.findOne({ slug: slug }).lean();
-
     if (category) {
       const posts = await Post.find({ category: category._id })
+        .lean()
         .populate("category")
         .populate({
           path: "idUser",
           select: "username",
-        })
-        .lean();
+        });
 
       res.json(posts);
     } else {

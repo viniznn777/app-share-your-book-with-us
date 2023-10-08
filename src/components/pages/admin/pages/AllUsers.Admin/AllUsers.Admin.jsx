@@ -28,7 +28,7 @@ const ALL_USERS_ADMIN = () => {
         setLoading(false);
       }
     })();
-    document.title = "AppBooks | Gerenciar usuários";
+    document.title = "ShareBooks | Gerenciar usuários";
   }, [id]);
 
   return (

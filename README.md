@@ -1,6 +1,6 @@
-## AppBooks - Blog App
+## ShareBooks - Blog App
 
-AppBooks é um aplicativo de blog que permite aos usuários visualizar postagens recentes, explorar categorias de postagens e criar suas próprias postagens. Os usuários podem criar uma conta, fazer login para acessar recursos adicionais e até mesmo recomendar livros por meio de postagens. Além disso, há funcionalidades de perfil de usuário e um painel de administração para gerenciar o sistema.
+ShareBooks é um aplicativo de blog que permite aos usuários visualizar postagens recentes, explorar categorias de postagens e criar suas próprias postagens. Os usuários podem criar uma conta, fazer login para acessar recursos adicionais e até mesmo recomendar livros por meio de postagens. Além disso, há funcionalidades de perfil de usuário e um painel de administração para gerenciar o sistema.
 
 ## Tecnologias Utilizadas
 
@@ -63,8 +63,15 @@ Este projeto está licenciado.
 #### Atualizações futuras:
 
 - Aprimorar o layout do blog
-- Refatoração de códigos
 
 ### Correções:
 
 - Corrigido o problema de ver posts com a categoria selecionada (04/10/23)
+
+### Últimas atualizações:
+
+- Mudamos o nome de 'AppBooks' para 'ShareBooks' para melhor refletir a essência do site. Embora 'AppBooks' fosse um nome sólido, 'ShareBooks' captura com mais precisão o que oferecemos.
+- Adicionado o background para algumas páginas (08/10/23)
+- Adicionado um Footer nas páginas de Login e Registrar (08/10/23)
+- Otimização de imagens (08/10/23)
+- Refatoração de códigos (08/10/23)

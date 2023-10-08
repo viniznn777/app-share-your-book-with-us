@@ -7,7 +7,7 @@ const Header = () => {
   const { authenticated } = useContext(Context);
 
   return (
-    <div className="container" style={{ paddingTop: "78px" }}>
+    <div className="container">
       <div
         className="p-5 rounded-lg m-3 mt-5"
         style={{ background: "#E9ECEF" }}
@@ -42,7 +42,9 @@ const Header = () => {
         )}
       </div>
       <hr />
-      <h2>Postagens Recentes: </h2>
+      <div className="container-text">
+        <h2>Postagens Recentes: </h2>
+      </div>
       <hr />
     </div>
   );

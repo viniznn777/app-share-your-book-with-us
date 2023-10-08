@@ -1,12 +1,18 @@
 import styled from "styled-components";
-import bgBooks from "../../../../images/backgrounds/bg-books-min.jpg";
+import bgBooks from "../../../images/backgrounds/bg-books-min.jpg";
 
-const ContainerCreatePost = styled.div`
+const Container = styled.div`
+  padding: 0;
   height: 100vh;
-  padding-top: 90px;
+  padding-top: 99px;
   background-image: url(${bgBooks});
   background-position: center;
   background-size: contain;
+
+  .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+  }
   .container-text {
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(2px);
@@ -15,4 +21,4 @@ const ContainerCreatePost = styled.div`
   }
 `;
 
-export default ContainerCreatePost;
+export default Container;

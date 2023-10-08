@@ -12,7 +12,7 @@ const FormCreateCategory = () => {
   const restrictModel = true;
 
   useEffect(() => {
-    document.title = "AppBooks | Criar Categoria";
+    document.title = "ShareBooks | Criar Categoria";
   });
 
   return (

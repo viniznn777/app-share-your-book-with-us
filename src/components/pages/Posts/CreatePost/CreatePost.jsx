@@ -4,10 +4,14 @@ import Form from "./Form/Form";
 
 const CreatePost = () => {
   return (
-    <ContainerCreatePost className="container">
-      <p className="fs-1 mt-4 fw-bold">Adicionar postagem: </p>
-      <hr />
-      <Form />
+    <ContainerCreatePost className="container-fluid">
+      <div className="container">
+        <div className="container-text">
+          <p className="fs-1 mt-4 fw-bold">Adicionar postagem: </p>
+        </div>
+        <hr />
+        <Form />
+      </div>
     </ContainerCreatePost>
   );
 };

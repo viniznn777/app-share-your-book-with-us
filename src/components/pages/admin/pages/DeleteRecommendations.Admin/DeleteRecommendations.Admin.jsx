@@ -27,7 +27,7 @@ const DELETE_RECOMMENDATIONS_ADMIN = () => {
         setIsLoading(false);
       }
     })();
-    document.title = "AppBooks | Deletar Recomendações";
+    document.title = "ShareBooks | Deletar Recomendações";
   }, []);
 
   return (

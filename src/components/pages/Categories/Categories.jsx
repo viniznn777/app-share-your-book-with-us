@@ -27,31 +27,35 @@ const Categories = () => {
       }
     }
     fetchData();
-    document.title = "AppBooks | Categorias";
+    document.title = "ShareBooks | Categorias";
   }, []);
 
   return (
-    <Container className="container">
-      <ToastContainer />
-      <p className="fs-1 mt-4 fw-bold">Categorias: </p>
-      <hr />
-      <div className="container-cards">
-        {loading ? (
-          <Loader />
-        ) : data.length > 0 ? (
-          data.map((item, index) => (
-            <CategoryCard
-              img={item.img}
-              name={item.name}
-              description={item.description}
-              slug={item.slug}
-              id={item._id}
-              key={index}
-              deleteButton={false}
-              editButton={false}
-            />
-          ))
-        ) : null}
+    <Container className="container-fluid">
+      <div className="container">
+        <ToastContainer />
+        <div className="container-text">
+          <p className="fs-1 mt-4 fw-bold">Categorias: </p>
+        </div>
+        <hr />
+        <div className="container-cards">
+          {loading ? (
+            <Loader />
+          ) : data.length > 0 ? (
+            data.map((item, index) => (
+              <CategoryCard
+                img={item.img}
+                name={item.name}
+                description={item.description}
+                slug={item.slug}
+                id={item._id}
+                key={index}
+                deleteButton={false}
+                editButton={false}
+              />
+            ))
+          ) : null}
+        </div>
       </div>
     </Container>
   );

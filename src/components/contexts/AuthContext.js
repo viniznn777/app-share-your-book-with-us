@@ -28,6 +28,10 @@ function AuthProvider({ children }) {
   // Função para realizar o cadastro de um usuário no app
   const handleSignUp = async (event, username, email, password) => {
     event.preventDefault();
+    if (!username || !email || !password) {
+      alertMessage("Os campos não podem ficar vazios!");
+      return;
+    }
     try {
       const body = { username, email, password };
       const response = await fetch("http://localhost:8081/api/auth/register", {

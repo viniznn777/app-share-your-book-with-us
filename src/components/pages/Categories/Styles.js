@@ -1,8 +1,12 @@
 import styled from "styled-components";
+import bgBooks from "../../../images/backgrounds/bg-books-min.jpg";
 
 const Container = styled.div`
   padding-top: 90px;
   background-color: #fff;
+  background-image: url(${bgBooks});
+  background-position: center;
+  background-size: contain;
 
   a {
     text-decoration: none;
@@ -48,6 +52,12 @@ const Container = styled.div`
         border: 3px solid rgba(232, 151, 0, 1);
       }
     }
+  }
+  .container-text {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100%;
   }
 `;
 

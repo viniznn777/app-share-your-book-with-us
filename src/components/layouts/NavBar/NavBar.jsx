@@ -14,11 +14,11 @@ const NavBar = () => {
         <Link to={"/"} className="navbar-brand" draggable="false">
           <img
             src={Logo}
-            alt="Logo AppBooks"
+            alt="Logo ShareBooks"
             draggable="false"
             className="logo"
           />
-          &nbsp; AppBooks
+          &nbsp; ShareBooks
         </Link>
         <button
           className="navbar-toggler"

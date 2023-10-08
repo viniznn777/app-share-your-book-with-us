@@ -10,7 +10,7 @@ const Profile = () => {
   const { isAdmin } = useContext(ContextAdmin);
 
   useEffect(() => {
-    document.title = "AppBooks | Meu Perfil";
+    document.title = "ShareBooks | Meu Perfil";
   }, []);
 
   return (

@@ -32,7 +32,7 @@ const Form = () => {
     setIdUser(id);
 
     fetchData();
-    document.title = "AppBooks | Recomendar";
+    document.title = "ShareBooks | Recomendar";
   }, []);
   return (
     <div className="card mt-4 bg-white">

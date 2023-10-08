@@ -27,7 +27,7 @@ const EDIT_AND_DELETE_CATEGORY = () => {
       }
     }
     fetchData();
-    document.title = "AppBooks | Editar/Deletar Categorias";
+    document.title = "ShareBooks | Editar/Deletar Categorias";
   }, []);
 
   return (

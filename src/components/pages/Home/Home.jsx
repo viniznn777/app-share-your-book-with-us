@@ -4,6 +4,7 @@ import Header from "./Header/Header";
 import { errorMessage } from "../../utilities/toastMessages/ToastMessages";
 import { ToastContainer } from "react-toastify";
 import Loader from "../../utilities/Loader/Loader";
+import Container from "./Styles";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -27,11 +28,11 @@ const Home = () => {
       }
     }
     fetchData();
-    document.title = "AppBooks | Feed";
+    document.title = "ShareBooks | Feed";
   }, []);
 
   return (
-    <div>
+    <Container>
       <ToastContainer />
       <Header />
       {isLoading ? (
@@ -52,11 +53,13 @@ const Home = () => {
           />
         ))
       ) : (
-        <p className="fs-2" style={{ textAlign: "center" }}>
-          Ainda não há posts 🔎
-        </p>
+        <div className="container-text">
+          <p className="fs-2" style={{ textAlign: "center" }}>
+            Ainda não há posts 🔎
+          </p>
+        </div>
       )}
-    </div>
+    </Container>
   );
 };
 

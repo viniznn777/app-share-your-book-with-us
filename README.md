@@ -70,8 +70,9 @@ Este projeto está licenciado.
 
 ### Últimas atualizações:
 
-- Mudamos o nome de 'AppBooks' para 'ShareBooks' para melhor refletir a essência do site. Embora 'AppBooks' fosse um nome sólido, 'ShareBooks' captura com mais precisão o que oferecemos.
-- Adicionado o background para algumas páginas (08/10/23)
-- Adicionado um Footer nas páginas de Login e Registrar (08/10/23)
-- Otimização de imagens (08/10/23)
-- Refatoração de códigos (08/10/23)
+- Mudamos o nome de 'AppBooks' para 'ShareBooks' para melhor refletir a essência do site. Embora 'AppBooks' fosse um nome sólido, 'ShareBooks' captura com mais precisão o que oferecemos. (08/10/23)
+- Mudamos a Logo para uma logo mais minimalista e bonita. (08/10/23)
+- Adicionado o Background para algumas páginas. (08/10/23)
+- Adicionado um Footer nas páginas de Login e Registrar. (08/10/23)
+- Otimização de imagens. (08/10/23)
+- Refatoração de códigos. (08/10/23)

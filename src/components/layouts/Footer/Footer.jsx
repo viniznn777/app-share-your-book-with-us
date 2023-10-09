@@ -1,13 +1,13 @@
 import React from "react";
 import Container from "./Styles";
-import Logo from "../../../images/pilha-de-livros.png";
+import Logo from "../../../images/Logo_e_nome.png";
 
 const Footer = () => {
   return (
     <Container className="container-fluid">
       <div className="container">
         <img src={Logo} alt="Logotipo" className="img-fluid" />
-        <p className="fs-2 text-light">ShareBooks</p>
+
         <small className="text-light">
           developed by{" "}
           <a

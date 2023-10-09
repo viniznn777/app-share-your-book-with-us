@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../../contexts/AuthContext";
 import NavBarContainer from "./Styles";
 import { MdLogout } from "react-icons/md";
-import Logo from "../../../images/pilha-de-livros.png";
+import Logo from "../../../images/logo.png";
 
 const NavBar = () => {
   const { authenticated, handleLogout, nameUser } = useContext(Context);

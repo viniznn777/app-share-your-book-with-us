@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.footer`
+  padding-top: 5px;
+  padding-bottom: 5px;
   height: max-content;
   background-color: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(2px);
@@ -13,8 +15,8 @@ const Container = styled.footer`
     flex-direction: column;
   }
   img {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
   }
   p {
     font-family: "Croissant One", cursive;

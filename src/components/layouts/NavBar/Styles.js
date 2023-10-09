@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const NavBarContainer = styled.nav`
   img.logo {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
   }
   .nav-item {
     font-size: 1.25rem;
@@ -45,6 +45,7 @@ const NavBarContainer = styled.nav`
   }
   .navbar-brand {
     font-family: "Croissant One", cursive;
+    color: #ccccff;
   }
 
   @media screen and (max-width: 991px) {

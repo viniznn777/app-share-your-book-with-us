@@ -3,6 +3,7 @@ import bgBooks from "../../../images/backgrounds/bg-books-min.jpg";
 
 const Container = styled.div`
   padding-top: 90px;
+  padding-bottom: 15px;
   background-color: #fff;
   background-image: url(${bgBooks});
   background-position: center;

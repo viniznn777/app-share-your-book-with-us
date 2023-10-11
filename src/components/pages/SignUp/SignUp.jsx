@@ -16,7 +16,7 @@ const SignUp = () => {
         <div className="container-text">
           <p className="fs-1 mt-5">Crie sua conta hoje: </p>
         </div>
-        <hr />
+        <hr className="text-light" />
         <FormSignUp />
       </div>
       <ToastContainer />

@@ -1,23 +1,49 @@
 import styled from "styled-components";
-import bgBooks from "../../../images/backgrounds/bg-books-min.jpg";
+import {
+  backgroundColor,
+  fontColor,
+  secondaryBackground,
+} from "../Home/Styles";
 
 const Container = styled.div`
   padding: 0;
   height: 100vh;
   padding-top: 99px;
-  background-image: url(${bgBooks});
-  background-position: center;
-  background-size: contain;
+  background-color: ${backgroundColor};
 
   .card {
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(2px);
+    background-color: ${secondaryBackground};
+    backdrop-filter: blur(5px);
+    border: 1px solid ${secondaryBackground};
   }
+
+  input {
+    background-color: #31373d;
+    border: none;
+    color: #ffffff;
+    &::placeholder {
+      color: ${fontColor};
+    }
+    &:focus {
+      background-color: #31373d;
+      color: #ffffff;
+    }
+  }
+
+  .container {
+    padding: 0 55px;
+  }
+
   .container-text {
-    background-color: rgba(255, 255, 255, 0.95);
+    padding-left: 3px;
+    border-radius: 3px;
+    background-color: ${secondaryBackground};
     backdrop-filter: blur(2px);
     width: 100%;
     height: 100%;
+    p {
+      color: ${fontColor};
+    }
   }
 `;
 

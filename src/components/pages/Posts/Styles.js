@@ -1,6 +1,21 @@
 import styled from "styled-components";
+import { fontColor } from "../Home/Styles";
 
 const ContainerPost = styled.div`
+  p,
+  small {
+    color: #fff;
+  }
+  span {
+    color: ${fontColor};
+  }
+  hr {
+    color: ${fontColor};
+  }
+  .card {
+    background-color: #1b1f23;
+    backdrop-filter: blur(2px);
+  }
   .containerImg {
     width: 100%;
     display: flex;

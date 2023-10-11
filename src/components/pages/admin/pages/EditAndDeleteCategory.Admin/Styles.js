@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { fontColor, secondaryBackground } from "../../../Home/Styles";
 
 const Container = styled.div`
   padding-top: 99px;
-  background-color: #fff;
+  padding-bottom: 15px;
 
   a {
     text-decoration: none;
@@ -24,6 +25,7 @@ const Container = styled.div`
 
     .card {
       height: 526px;
+      background-color: ${secondaryBackground};
     }
     img {
       width: 286px;
@@ -40,17 +42,16 @@ const Container = styled.div`
         width: 15px;
       }
       &::-webkit-scrollbar-track {
-        background: #ffa500;
+        background: #31373d;
       }
       &::-webkit-scrollbar-thumb {
-        background-color: rgba(241, 157, 0, 0.76);
-
-        border: 3px solid rgba(232, 151, 0, 1);
+        background-color: ${secondaryBackground};
+        border: 1px solid ${fontColor};
       }
     }
   }
   hr {
-    color: green;
+    color: greenyellow;
   }
 `;
 

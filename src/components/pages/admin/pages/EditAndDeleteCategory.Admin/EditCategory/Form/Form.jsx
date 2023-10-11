@@ -58,7 +58,7 @@ const Form = () => {
                   id={"name"}
                   placeholder={"Nome da categoria"}
                   className={"form-control"}
-                  classLabel={"mt-3"}
+                  classLabel={"mt-3 fw-bold text-light"}
                   type={"text"}
                   onChange={(e) => setName(e.target.value)}
                   value={name}
@@ -73,7 +73,7 @@ const Form = () => {
                   id={"slug"}
                   placeholder={"Slug da categoria"}
                   className={"form-control"}
-                  classLabel={"mt-3"}
+                  classLabel={"mt-3 fw-bold text-light"}
                   type={"text"}
                   onChange={(e) => setSlug(e.target.value)}
                   value={slug}
@@ -85,7 +85,7 @@ const Form = () => {
                   nameInput={"restrictModel"}
                   id={"restrictModel"}
                   className={"form-control"}
-                  classLabel={"mt-3"}
+                  classLabel={"mt-3 fw-bold text-light"}
                   type={"hidden"}
                   value={restrictModel}
                 />
@@ -98,7 +98,7 @@ const Form = () => {
                   id={"description"}
                   placeholder={"Descrição da categoria"}
                   className={"form-control"}
-                  classLabel={"mt-3"}
+                  classLabel={"mt-3 fw-bold text-light"}
                   type={"text"}
                   onChange={(e) => setDescription(e.target.value)}
                   value={description}
@@ -113,7 +113,7 @@ const Form = () => {
                   id={"img"}
                   placeholder={"Imagem da categoria"}
                   className={"form-control"}
-                  classLabel={"mt-3"}
+                  classLabel={"mt-3 fw-bold text-light"}
                   type={"text"}
                   onChange={(e) => setImg(e.target.value)}
                   value={img}

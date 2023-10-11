@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fontColor, secondaryBackground } from "../../pages/Home/Styles";
 
 const ContainerProfile = styled.div`
   display: flex;
@@ -36,9 +37,12 @@ const ContainerProfile = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+    background-color: ${secondaryBackground};
+    color: ${fontColor};
+    border: none;
   }
   hr {
-    color: green;
+    color: greenyellow;
   }
   .container-links-adm {
     width: 100%;

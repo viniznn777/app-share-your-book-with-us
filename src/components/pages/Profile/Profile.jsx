@@ -24,17 +24,17 @@ const Profile = () => {
           className="mt-4 img-fluid"
           draggable="false"
         />
-        <p className="fs-3 fw-bold">{nameUser}</p>
+        <p className="fs-3 fw-bold text-light">{nameUser}</p>
       </div>
       <div className="container-fluid container-links">
         <Link to="/my-recommendations">
-          <div className="alert alert-light">Minhas Recomendações</div>
+          <div className="alert ">Minhas Recomendações</div>
         </Link>
         <Link to="/redefine-password">
-          <div className="alert alert-light">Redefinir Senha</div>
+          <div className="alert ">Redefinir Senha</div>
         </Link>
         <Link to="/redefine-email">
-          <div className="alert alert-light">Redefinir Email</div>
+          <div className="alert ">Redefinir Email</div>
         </Link>
         <Link to="/delete-account">
           <button className="btn btn-outline-danger">

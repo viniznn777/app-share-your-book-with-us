@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const NavBarContainer = styled.nav`
+  background-color: #1b1f23;
   img.logo {
     width: 90px;
     height: 90px;

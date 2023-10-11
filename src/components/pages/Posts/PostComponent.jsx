@@ -26,7 +26,7 @@ const PostComponent = ({
       <div className="card mt-4">
         <div className="card-body">
           <div className="title">
-            <p className="fs-1 fw-bold">{title}</p>
+            <p className="fs-1 fw-bold text-light">{title}</p>
             <div className="container-buttons">
               {Edit ? (
                 <div className="container-buttons">

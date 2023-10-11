@@ -35,7 +35,7 @@ const Form = () => {
     document.title = "ShareBooks | Recomendar";
   }, []);
   return (
-    <div className="card mt-4 bg-white">
+    <div className="card mt-4">
       <div className="card-body">
         <form method="post" action="http://localhost:8081/posts/new" id="form">
           <div className="containerTitle mt-2">
@@ -55,6 +55,8 @@ const Form = () => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               className="form-control"
+              classLabel={"fw-bold text-light"}
+              placeholder={"Título"}
             />
 
             <div className="containerSlug mt-2">
@@ -69,6 +71,7 @@ const Form = () => {
                 onChange={(e) => setSlug(e.target.value)}
                 className="form-control"
                 placeholder="ex. viagem-ao-centro-da-terra"
+                classLabel={"fw-bold text-light"}
               />
             </div>
 
@@ -83,6 +86,8 @@ const Form = () => {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 className="form-control"
+                classLabel={"fw-bold text-light"}
+                placeholder={"Descrição"}
               />
             </div>
 
@@ -97,6 +102,8 @@ const Form = () => {
                 value={img}
                 onChange={(e) => setImg(e.target.value)}
                 className="form-control"
+                classLabel={"fw-bold text-light"}
+                placeholder={"URL"}
               />
             </div>
 
@@ -111,6 +118,8 @@ const Form = () => {
                 onChange={(e) => setAuthor(e.target.value)}
                 className="form-control"
                 value={author}
+                classLabel={"fw-bold text-light"}
+                placeholder={"Autor"}
               />
             </div>
 
@@ -125,11 +134,15 @@ const Form = () => {
                 onChange={(e) => setSynopsis(e.target.value)}
                 className="form-control"
                 value={synopsis}
+                classLabel={"fw-bold text-light"}
+                placeholder={"Sinopse"}
               />
             </div>
 
             <div className="containerCategory mt-2">
-              <label htmlFor="category">Categoria: </label>
+              <label htmlFor="category" className="fw-bold text-light">
+                Categoria:{" "}
+              </label>
               <select
                 name="category"
                 id="category"

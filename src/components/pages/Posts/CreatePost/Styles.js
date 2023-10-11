@@ -1,17 +1,37 @@
 import styled from "styled-components";
-import bgBooks from "../../../../images/backgrounds/bg-books-min.jpg";
+import {
+  fontColor,
+  inputBackground,
+  secondaryBackground,
+} from "../../Home/Styles";
 
 const ContainerCreatePost = styled.div`
   height: 100vh;
-  padding-top: 90px;
-  background-image: url(${bgBooks});
-  background-position: center;
-  background-size: contain;
+  padding-top: 99px;
   .container-text {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: ${secondaryBackground};
     backdrop-filter: blur(2px);
     width: 100%;
     height: 100%;
+  }
+  .card {
+    background-color: ${secondaryBackground};
+    input {
+      color: #fff;
+      border: none;
+      background-color: ${inputBackground};
+      &::placeholder {
+        color: ${fontColor};
+      }
+    }
+    select {
+      background-color: ${inputBackground};
+      color: #fff;
+      border: none;
+    }
+  }
+  hr {
+    color: ${fontColor};
   }
 `;
 

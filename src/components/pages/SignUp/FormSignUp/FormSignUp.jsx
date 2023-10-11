@@ -25,7 +25,7 @@ const FormSignUp = () => {
             label={true}
             labelText="Nome de Usuário: "
             placeholder="Nome de usuário"
-            classLabel="mt-2 fw-bold"
+            classLabel="mt-2 fw-bold text-light"
             className="form-control mt-3"
             required={false}
           />
@@ -38,7 +38,7 @@ const FormSignUp = () => {
             label={true}
             labelText="Email: "
             placeholder="Email"
-            classLabel="mt-2 fw-bold"
+            classLabel="mt-2 fw-bold text-light"
             className="form-control mt-3"
             required={false}
           />
@@ -51,16 +51,18 @@ const FormSignUp = () => {
             label={true}
             labelText="Senha: "
             placeholder="Senha"
-            classLabel="mt-2 fw-bold"
+            classLabel="mt-2 fw-bold text-light"
             className="form-control mt-3"
             required={false}
           />
-          <button type="submit" className="btn btn-success  mt-3">
+          <button type="submit" className="btn btn-primary  mt-3">
             Registrar
           </button>
         </form>
         <div className="mt-4">
-          <Link to="/signin">Já tenho uma conta.</Link>
+          <Link to="/signin" className="text-light">
+            Já tenho uma conta.
+          </Link>
         </div>
       </div>
     </div>

@@ -70,6 +70,7 @@ Este projeto está licenciado.
 
 ### Últimas atualizações:
 
+- Mudamos as cores do layout do blog. (Mudamos para um tema dark) (10/10/23)
 - Mudamos o nome de 'AppBooks' para 'ShareBooks' para melhor refletir a essência do site. Embora 'AppBooks' fosse um nome sólido, 'ShareBooks' captura com mais precisão o que oferecemos. (08/10/23)
 - Mudamos a Logo para uma logo mais minimalista e bonita. (08/10/23)
 - Adicionado o Background para algumas páginas. (08/10/23)

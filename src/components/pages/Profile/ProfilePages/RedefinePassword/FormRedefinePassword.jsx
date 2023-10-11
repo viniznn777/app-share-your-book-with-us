@@ -12,7 +12,7 @@ const FormRedefinePassword = () => {
   return (
     <div className="container mt-5">
       <hr />
-      <p className="fs-1 fw-semibold">Redefinir Senha</p>
+      <p className="fs-1 fw-semibold">Redefinir Senha:</p>
       <hr />
       <div className="card">
         <div className="card-body">
@@ -24,10 +24,11 @@ const FormRedefinePassword = () => {
               nameInput={"oldpassword"}
               id={"oldpassword"}
               className={"form-control mt-3"}
-              classLabel={"oldpassword mt-2"}
+              classLabel={"oldpassword mt-2 fw-bold text-light"}
               onChange={(e) => setOldPassword(e.target.value)}
               value={oldPassword}
               required={false}
+              placeholder={"Senha antiga"}
             />
             <Input
               label={true}
@@ -36,10 +37,11 @@ const FormRedefinePassword = () => {
               nameInput={"newpassword"}
               id={"newpassword"}
               className={"form-control mt-3"}
-              classLabel={"newpassword mt-2"}
+              classLabel={"newpassword mt-2 fw-bold text-light"}
               onChange={(e) => setNewPassword(e.target.value)}
               value={newPassword}
               required={false}
+              placeholder={"Nova senha"}
             />
             <Input
               label={true}
@@ -48,10 +50,11 @@ const FormRedefinePassword = () => {
               nameInput={"newpassword2"}
               id={"newpassword2"}
               className={"form-control mt-3"}
-              classLabel={"newpassword2 mt-2"}
+              classLabel={"newpassword2 mt-2 fw-bold text-light"}
               onChange={(e) => setNewPassword2(e.target.value)}
               value={newPassword2}
               required={false}
+              placeholder={"Digite novamente"}
             />
             <button className="btn btn-success mt-4">Criar nova senha</button>
             <BackButton to={"/my-profile"} text={"Voltar"} />

@@ -37,7 +37,7 @@ const Categories = () => {
         <div className="container-text">
           <p className="fs-1 mt-4 fw-bold">Categorias: </p>
         </div>
-        <hr />
+        <hr className="text-light" />
         <div className="container-cards">
           {loading ? (
             <Loader />

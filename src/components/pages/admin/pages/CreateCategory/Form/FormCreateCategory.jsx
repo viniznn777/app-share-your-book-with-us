@@ -28,7 +28,7 @@ const FormCreateCategory = () => {
                 id={"name"}
                 placeholder={"Nome da categoria"}
                 className={"form-control"}
-                classLabel={"mt-3"}
+                classLabel={"mt-3 fw-bold text-light"}
                 type={"text"}
                 onChange={(e) => setName(e.target.value)}
                 value={name}
@@ -43,7 +43,7 @@ const FormCreateCategory = () => {
                 id={"slug"}
                 placeholder={"Slug da categoria"}
                 className={"form-control"}
-                classLabel={"mt-3"}
+                classLabel={"mt-3 fw-bold text-light"}
                 type={"text"}
                 onChange={(e) => setSlug(e.target.value)}
                 value={slug}
@@ -68,7 +68,7 @@ const FormCreateCategory = () => {
                 id={"description"}
                 placeholder={"Descrição da categoria"}
                 className={"form-control"}
-                classLabel={"mt-3"}
+                classLabel={"mt-3 fw-bold text-light"}
                 type={"text"}
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}
@@ -83,7 +83,7 @@ const FormCreateCategory = () => {
                 id={"img"}
                 placeholder={"Imagem da categoria"}
                 className={"form-control"}
-                classLabel={"mt-3"}
+                classLabel={"mt-3 fw-bold text-light"}
                 type={"text"}
                 onChange={(e) => setImg(e.target.value)}
                 value={img}

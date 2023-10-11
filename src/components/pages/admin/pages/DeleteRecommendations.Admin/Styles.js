@@ -4,7 +4,7 @@ const ContainerDeleteRecommendations = styled.div`
   padding-top: 99px;
 
   hr {
-    color: green;
+    color: greenyellow;
   }
 `;
 

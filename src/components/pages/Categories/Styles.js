@@ -1,13 +1,14 @@
 import styled from "styled-components";
-import bgBooks from "../../../images/backgrounds/bg-books-min.jpg";
+import {
+  backgroundColor,
+  fontColor,
+  secondaryBackground,
+} from "../Home/Styles";
 
 const Container = styled.div`
-  padding-top: 90px;
+  padding-top: 99px;
   padding-bottom: 15px;
-  background-color: #fff;
-  background-image: url(${bgBooks});
-  background-position: center;
-  background-size: contain;
+  background-color: ${backgroundColor};
 
   a {
     text-decoration: none;
@@ -29,6 +30,8 @@ const Container = styled.div`
 
     .card {
       height: 526px;
+      background-color: ${secondaryBackground};
+      backdrop-filter: blur(5px);
     }
     img {
       width: 286px;
@@ -45,20 +48,24 @@ const Container = styled.div`
         width: 15px;
       }
       &::-webkit-scrollbar-track {
-        background: #ffa500;
+        background: #31373d;
       }
       &::-webkit-scrollbar-thumb {
-        background-color: rgba(241, 157, 0, 0.76);
-
-        border: 3px solid rgba(232, 151, 0, 1);
+        background-color: ${secondaryBackground};
+        border: 1px solid ${fontColor};
       }
     }
   }
   .container-text {
-    background-color: rgba(255, 255, 255, 0.95);
+    padding-left: 3px;
+    border-radius: 3px;
+    background-color: ${secondaryBackground};
     backdrop-filter: blur(2px);
     width: 100%;
     height: 100%;
+    p {
+      color: ${fontColor};
+    }
   }
 `;
 

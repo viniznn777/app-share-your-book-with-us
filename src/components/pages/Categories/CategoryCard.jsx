@@ -24,8 +24,8 @@ const CategoryCard = ({
           />
         </div>
         <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <p className="card-text">{description}</p>
+          <h5 className="card-title text-light">{name}</h5>
+          <p className="card-text text-light">{description}</p>
           <Link to={`/categories/${slug}`} className="link">
             <button className="btn btn-primary">Ver Recomendações</button>
           </Link>

@@ -32,13 +32,13 @@ const FormDeleteAccount = () => {
 
   return (
     <div className="container">
-      <p className="fs-1 fw-semibold mt-4">Deletar conta</p>
+      <p className="fs-1 fw-semibold mt-4">Deletar conta:</p>
       <hr />
       <div className="card">
         <div className="card-body">
           <form method="post" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="emailinuse" className="mt-2">
+              <label htmlFor="emailinuse" className="mt-2 fw-bold text-light">
                 Email cadastrado:{" "}
               </label>
               <input
@@ -54,7 +54,8 @@ const FormDeleteAccount = () => {
               type={"password"}
               label={true}
               labelText={"Confirme sua senha:"}
-              classLabel="mt-2"
+              placeholder={"Confirme sua senha"}
+              classLabel="mt-2 fw-bold text-light"
               className="form-control mt-4"
               nameInput="password"
               id="password"

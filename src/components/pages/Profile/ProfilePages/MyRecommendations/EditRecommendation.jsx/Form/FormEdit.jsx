@@ -60,7 +60,7 @@ const FormEdit = () => {
       <hr />
       <p className="fs-1">Editar Recomendação:</p>
       <hr />
-      <div className="card mt-4 bg-white">
+      <div className="card mt-4">
         <div className="card-body">
           <form method="post" onSubmit={handleSubmit} id="form">
             <div className="containerTitle mt-2">
@@ -74,6 +74,7 @@ const FormEdit = () => {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 className="form-control"
+                classLabel="fw-bold text-light mt-2"
               />
 
               <div className="containerSlug mt-2">
@@ -88,6 +89,7 @@ const FormEdit = () => {
                   onChange={(e) => setSlug(e.target.value)}
                   className="form-control"
                   placeholder="ex. viagem-ao-centro-da-terra"
+                  classLabel="fw-bold text-light mt-2"
                 />
               </div>
 
@@ -102,6 +104,7 @@ const FormEdit = () => {
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   className="form-control"
+                  classLabel="fw-bold text-light mt-2"
                 />
               </div>
 
@@ -116,6 +119,7 @@ const FormEdit = () => {
                   value={img}
                   onChange={(e) => setImg(e.target.value)}
                   className="form-control"
+                  classLabel="fw-bold text-light mt-2"
                 />
               </div>
 
@@ -130,6 +134,7 @@ const FormEdit = () => {
                   onChange={(e) => setAuthor(e.target.value)}
                   className="form-control"
                   value={author}
+                  classLabel="fw-bold text-light mt-2"
                 />
               </div>
 
@@ -144,11 +149,14 @@ const FormEdit = () => {
                   onChange={(e) => setSynopsis(e.target.value)}
                   className="form-control"
                   value={synopsis}
+                  classLabel="fw-bold text-light mt-2"
                 />
               </div>
 
               <div className="containerCategory mt-2">
-                <label htmlFor="category">Categoria: </label>
+                <label htmlFor="category" className="text-light">
+                  Categoria:{" "}
+                </label>
                 <select
                   name="category"
                   id="category"

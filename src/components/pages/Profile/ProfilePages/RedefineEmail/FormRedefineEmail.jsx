@@ -31,14 +31,14 @@ const FormRedefineEmail = () => {
   return (
     <div className="container mt-5">
       <hr />
-      <p className="fs-1 fw-semibold">Redefinir Email</p>
+      <p className="fs-1 fw-semibold">Redefinir Email:</p>
       <hr />
       <div className="card">
         <div className="card-body">
           <form method="post" onSubmit={handleSubmit}>
             <div>
               {" "}
-              <label htmlFor="emailinuse" className="mt-2">
+              <label htmlFor="emailinuse" className="mt-2 fw-bold text-light">
                 Email em uso:{" "}
               </label>
               <input
@@ -58,10 +58,11 @@ const FormRedefineEmail = () => {
               nameInput={"newemail"}
               id={"newemail"}
               className={"form-control mt-3"}
-              classLabel={"newemail mt-2"}
+              classLabel={"newemail mt-2 fw-bold text-light"}
               onChange={(e) => setNewEmail(e.target.value)}
               value={newEmail}
               required={false}
+              placeholder={"Novo email"}
             />
             <button className="btn btn-success mt-4">Redefinir Email</button>
             <BackButton to={"/my-profile"} text={"Voltar"} />

@@ -13,7 +13,7 @@ const SignIn = () => {
         <div className="container-text">
           <p className="fs-1 mt-5">Fazer login: </p>
         </div>
-        <hr />
+        <hr className="text-light" />
         <FormSignIn />
       </div>
       <Footer />

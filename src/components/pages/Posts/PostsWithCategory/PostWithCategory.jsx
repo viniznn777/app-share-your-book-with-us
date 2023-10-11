@@ -32,14 +32,14 @@ const PostWithCategory = () => {
   }, [slug]);
 
   return (
-    <div className="container" style={{ paddingTop: "99px" }}>
+    <div className="container" style={{ paddingTop: "100px" }}>
       {data.length > 0 ? (
         <div>
-          <hr />
+          <hr style={{ color: "#aad6ff" }} />
           <p className="fs-1 mt-4 fw-bold" style={{ textAlign: "center" }}>
             {data[0].category.name}
           </p>
-          <hr />
+          <hr style={{ color: "#aad6ff" }} />
           <BackButton to={"/categories"} text={"Voltar"} />
         </div>
       ) : null}
@@ -64,11 +64,11 @@ const PostWithCategory = () => {
         ))
       ) : (
         <div>
-          <hr />
+          <hr style={{ color: "#aad6ff" }} />
           <p className="fs-1" style={{ textAlign: "center" }}>
             Ainda não há posts 🔎
           </p>
-          <hr />
+          <hr style={{ color: "#aad6ff" }} />
           <BackButton to={"/categories"} text={"Voltar"} />
         </div>
       )}

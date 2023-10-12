@@ -3,7 +3,6 @@ import Input from "../../../utilities/Input";
 import { Context } from "../../../contexts/AuthContext";
 import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
 
 const FormSignIn = () => {
   const { handleLogin } = useContext(Context);
@@ -17,7 +16,7 @@ const FormSignIn = () => {
   return (
     <div className="card mt-5">
       <div className="card-body">
-        <form onSubmit={(event) => handleLogin(event, email, password)}>
+        <form onSubmit={(e) => handleLogin(e, email, password)}>
           <Input
             type="email"
             nameInput="email"

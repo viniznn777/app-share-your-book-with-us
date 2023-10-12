@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PiProhibitBold } from "react-icons/pi";
+import { alertMessage } from "../../../../utilities/toastMessages/ToastMessages";
 
 const AccessDenied = () => {
+  useEffect(() => {
+    alertMessage(
+      "Somente pessoas com permissões de Administrador podem acessar esta URL!"
+    );
+  }, []);
+
   return (
     <div
       style={{

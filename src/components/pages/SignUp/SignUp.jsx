@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Container from "./Styles";
 import FormSignUp from "./FormSignUp/FormSignUp";
 import Footer from "../../layouts/Footer/Footer";
@@ -19,7 +17,6 @@ const SignUp = () => {
         <hr className="text-light" />
         <FormSignUp />
       </div>
-      <ToastContainer />
       <Footer />
     </Container>
   );

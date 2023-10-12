@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ContainerDeleteRecommendations from "./Styles";
 import PostComponent from "../../../Posts/PostComponent";
 import Loader from "../../../../utilities/Loader/Loader";
-import { ToastContainer } from "react-toastify";
 import { errorMessage } from "../../../../utilities/toastMessages/ToastMessages";
 import BackButton from "../../../../utilities/BackButton/BackButton";
 
@@ -32,7 +31,6 @@ const DELETE_RECOMMENDATIONS_ADMIN = () => {
 
   return (
     <ContainerDeleteRecommendations className="container">
-      <ToastContainer />
       <div>
         <hr />
         <p className="fs-1">Deletar Recomendações: </p>

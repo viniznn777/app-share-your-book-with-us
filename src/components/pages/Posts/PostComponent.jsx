@@ -2,7 +2,6 @@ import React from "react";
 import ContainerPost from "./Styles";
 import { Link } from "react-router-dom";
 import DeletePost from "./DeletePost";
-import { ToastContainer } from "react-toastify";
 import { dataFormated } from "../../utilities/dataFormated";
 import { FaRegEdit } from "react-icons/fa";
 
@@ -99,7 +98,6 @@ const PostComponent = ({
             {dataFormated(date)}
           </small>
         </div>
-        <ToastContainer />
       </div>
       <hr />
       <hr />

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Container from "./Styles";
 import { errorMessage } from "../../../../utilities/toastMessages/ToastMessages";
-import { ToastContainer } from "react-toastify";
 import Loader from "../../../../utilities/Loader/Loader";
 import CategoryCard from "../../../Categories/CategoryCard";
 
@@ -32,7 +31,6 @@ const EDIT_AND_DELETE_CATEGORY = () => {
 
   return (
     <Container className="container">
-      <ToastContainer />
       <div>
         <hr />
         <p className="fs-1 mt-4 fw-bold">Editar/Deletar Categorias: </p>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Input from "../../../../../utilities/Input";
-import { ToastContainer } from "react-toastify";
 import { SendData } from "./SendDataForm";
 import BackButton from "../../../../../utilities/BackButton/BackButton";
 
@@ -90,7 +89,6 @@ const FormCreateCategory = () => {
                 required={false}
               />
             </div>
-            <ToastContainer />
             <button className="btn btn-success mt-4">Criar Categoria</button>
           </form>
           <BackButton to={"/my-profile"} text={"Voltar"} />

@@ -3,7 +3,6 @@ import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 import { BiUserCircle } from "react-icons/bi";
 import { dataFormated } from "../../../../../utilities/dataFormated";
-import { ToastContainer } from "react-toastify";
 import { deleteUserAdmin } from "./deleteUserAdmin";
 import { becomeAdmin, removeAdmin } from "./becomeAdminOrRemoveAdmin";
 import { Context } from "../../../../../contexts/AuthContext";
@@ -79,7 +78,6 @@ const CardUser = ({ username, email, password, idUser, date, adm }) => {
                 >
                   Deletar <MdDeleteForever />
                 </button>
-                <ToastContainer />
               </div>
               <small>
                 <span className="fw-bold">Nota: </span>

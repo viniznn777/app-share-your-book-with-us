@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Input from "../../../../utilities/Input";
-import { ToastContainer } from "react-toastify";
+
 import SendFormDataEmail from "./SendFormDataEmail";
 import BackButton from "../../../../utilities/BackButton/BackButton";
 
@@ -66,7 +66,6 @@ const FormRedefineEmail = () => {
             />
             <button className="btn btn-success mt-4">Redefinir Email</button>
             <BackButton to={"/my-profile"} text={"Voltar"} />
-            <ToastContainer />
           </form>
         </div>
       </div>

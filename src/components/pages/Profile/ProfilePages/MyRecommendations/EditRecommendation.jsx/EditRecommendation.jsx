@@ -3,7 +3,7 @@ import ContainerEdit from "./Styles";
 import { useParams } from "react-router-dom";
 import ValidateURLData from "./ValidationEdit";
 import FormEdit from "./Form/FormEdit";
-import { ToastContainer } from "react-toastify";
+
 import Loader from "../../../../../utilities/Loader/Loader";
 
 const EditRecommendation = () => {
@@ -42,7 +42,6 @@ const EditRecommendation = () => {
         <FormEdit />
       ) : (
         <div>
-          <ToastContainer />
           <p className="fs-1 mt-4">Rota de edição não encontrada :(</p>
           <br />
           <p className="fs-5">Verifique sua URL e tente novamante!</p>

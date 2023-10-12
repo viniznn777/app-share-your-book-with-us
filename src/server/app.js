@@ -10,15 +10,26 @@ const posts = require("./config/routes/Posts/posts");
 const auth = require("./config/routes/auth/auth");
 const user = require("./config/routes/user/user");
 const admin = require("./config/routes/admin/admin");
+const passport = require("passport");
+require("./config/routes/auth/passport_config")(passport);
 
+// Configurações
+//Sessão
 app.use(
   session({
-    secret: "app-books",
+    // "secret": Uma chave secreta usada para assinar os cookies de sessão. Essa chave é usada para evitar que os cookies sejam falsificados.
+    secret: "share-books",
+    // "resave": Indica se as sessões devem ser salvas novamente no armazenamento, mesmo que não tenham sido modificadas.
     resave: true,
+    // "saveUninitialized": Indica se as sessões devem ser salvas mesmo que não tenham sido inicializadas. true significa que sessões vazias também serão salvas.
     saveUninitialized: true,
   })
 );
+// Inicialização do Passport (autenticação)
+app.use(passport.initialize());
 
+// Configuração das sessões do Passport
+app.use(passport.session());
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));

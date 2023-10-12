@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import Input from "../../../../utilities/Input";
 import sendDataForm from "./deleteAccountFunction";
 import { Context } from "../../../../contexts/AuthContext";
-import { ToastContainer } from "react-toastify";
 import BackButton from "../../../../utilities/BackButton/BackButton";
 
 const FormDeleteAccount = () => {
@@ -68,7 +67,6 @@ const FormDeleteAccount = () => {
             </button>
             <br />
             <BackButton to={"/my-profile"} text={"Voltar"} />
-            <ToastContainer />
           </form>
         </div>
       </div>

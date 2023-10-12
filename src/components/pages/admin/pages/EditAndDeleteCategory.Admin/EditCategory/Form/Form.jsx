@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Input from "../../../../../../utilities/Input";
-import { ToastContainer } from "react-toastify";
 import BackButton from "../../../../../../utilities/BackButton/BackButton";
 import { useParams } from "react-router-dom";
 import { errorMessage } from "../../../../../../utilities/toastMessages/ToastMessages";
@@ -120,7 +119,7 @@ const Form = () => {
                   required={false}
                 />
               </div>
-              <ToastContainer />
+
               <button className="btn btn-success mt-4">Editar Categoria</button>
             </form>
             <BackButton to={"/admin/categories/edit-delete"} text={"Voltar"} />

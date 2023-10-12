@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Container from "./Styles";
 import { errorMessage } from "../../utilities/toastMessages/ToastMessages";
-import { ToastContainer } from "react-toastify";
 import Loader from "../../utilities/Loader/Loader";
 import CategoryCard from "./CategoryCard";
 
@@ -33,7 +32,6 @@ const Categories = () => {
   return (
     <Container className="container-fluid">
       <div className="container">
-        <ToastContainer />
         <div className="container-text">
           <p className="fs-1 mt-4 fw-bold">Categorias: </p>
         </div>

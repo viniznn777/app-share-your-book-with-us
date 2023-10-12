@@ -4,7 +4,6 @@ import Input from "../../../../../../utilities/Input";
 import { useParams } from "react-router-dom";
 import ValidateURLData from "../ValidationEdit";
 import sendDataForm from "./SendData";
-import { ToastContainer } from "react-toastify";
 
 const FormEdit = () => {
   const [title, setTitle] = useState("");
@@ -182,7 +181,7 @@ const FormEdit = () => {
             <button type="submit" className="btn btn-success mt-4">
               Enviar edição
             </button>
-            <ToastContainer />
+
             <BackButton to={"/my-recommendations"} text={"Voltar"} />
           </form>
         </div>

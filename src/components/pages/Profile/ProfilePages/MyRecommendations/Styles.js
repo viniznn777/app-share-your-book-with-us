@@ -6,5 +6,8 @@ const ContainerMyRecommendations = styled.div`
   hr {
     color: ${fontColor};
   }
+  p.fs-2 {
+    color: #fff;
+  }
 `;
 export default ContainerMyRecommendations;

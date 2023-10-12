@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import PostComponent from "../Posts/PostComponent";
 import Header from "./Header/Header";
 import { errorMessage } from "../../utilities/toastMessages/ToastMessages";
-import { ToastContainer } from "react-toastify";
 import Loader from "../../utilities/Loader/Loader";
 import Container from "./Styles";
 
@@ -33,7 +32,6 @@ const Home = () => {
 
   return (
     <Container>
-      <ToastContainer />
       <Header />
       {isLoading ? (
         <Loader />

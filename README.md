@@ -77,3 +77,4 @@ Este projeto está licenciado.
 - Adicionado um Footer nas páginas de Login e Registrar. (08/10/23)
 - Otimização de imagens. (08/10/23)
 - Refatoração de códigos. (08/10/23)
+- Atualização no processo de login do usuário, agora foi adicionado um processo de autenticacão com o passportjs
